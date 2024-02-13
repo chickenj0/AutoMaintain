@@ -21,23 +21,21 @@ Enable Restore Point & Restore point 'MaintenanceRestorePoint' created
 Find-Module -Name PowerShellGet | Install-Module  
 Install-PackageProvider -Name NuGet
 
-# install relevant modules
+# PSWindowsUpdate update - ()
+# WinGet upgrade - ()
 Install-Module PSWindowsUpdate && install-module PowerShellGet
 
-Install PowerShellGet & PSWindowsUpdate
 
 # update WindowsOS & WinGet
 get-windowsupdate -install && winget upgrade --all
 
-PSWindowsUpdate update - ()
-WinGet upgrade - ()
 
-# update windows Office and 365
+# Office & MS 365 updates - OfficeC2RClient.exe - checked
+
 cmd.exe
 whoami
 "C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update <user>
 
-Office & 365 updates - OfficeC2RClient.exe - checked
 
 
 # disk cleanup 
