@@ -6,12 +6,11 @@ Enable Restore Point & Restore point 'MaintenanceRestorePoint' created
 MSP 360 updated, backup to Cloud set. Education given 
 Caffeine64 installed and started for 24hrs
 Install PowerShellGet & PSWindowsUpdate
-Intel Driver & Support Assistant updated – ()
 PSWindowsUpdate update - ()
 WinGet upgrade - ()
 
 
-BitDefender Endpoint Security Tools - signatures updated, modules checked (EDR sensor ON), 
+
 
 
 
@@ -37,6 +36,8 @@ Splashtop Streamer checked / updated
 VLC Media Player checked / updated
 BIOS checked / updated
 Adobe Acrobat (64-bit) - checked 
+Lenovo Vantage / Commercial Vantage 
+
 
 TaskMgr telemetry - OK
 Disk cleanup – () 
