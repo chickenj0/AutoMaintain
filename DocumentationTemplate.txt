@@ -1,0 +1,44 @@
+Feb maintenance
+
+Install PowerShell
+Permissions set - RemoteSigned 
+Enable Restore Point & Restore point 'MaintenanceRestorePoint' created
+MSP 360 updated, backup to Cloud set. Education given 
+Caffeine64 installed and started for 24hrs
+Install PowerShellGet & PSWindowsUpdate
+Intel Driver & Support Assistant updated – ()
+PSWindowsUpdate update - ()
+WinGet upgrade - ()
+
+
+BitDefender Endpoint Security Tools - signatures updated, modules checked (EDR sensor ON), 
+
+
+
+Office & 365 updates - OfficeC2RClient.exe - checked
+MS Store Apps – checked / updated
+Apple Software Updater – checked 
+DisplayLink Manager checked / updated
+Samsung Magician – updated
+EPSON Software Update checked
+Brother iPrint and Scan - updated
+HP DesignJet Utility checked / updated
+
+
+Edge updated
+Chrome checked
+Microsoft 365 and Office updated
+Adobe Acrobat Updater checked
+Sonic Suite Companion updated
+iTunes checked
+Java updated
+Zoom – updated
+Splashtop Streamer checked / updated
+VLC Media Player checked / updated
+BIOS checked / updated
+Adobe Acrobat (64-bit) - checked 
+
+TaskMgr telemetry - OK
+Disk cleanup – () 
+Disk retrim - Allocations trimmed ()
+System file check – found corrupt files and successfully repaired 
