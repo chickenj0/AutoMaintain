@@ -53,6 +53,11 @@ OR
 Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'verifyonly'
 Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'scannow'
 
+TaskMgr telemetry - OK
+Disk cleanup – () 
+Disk retrim - Allocations trimmed ()
+System file check – found corrupt files and successfully repaired 
+
 
 BitDefender Endpoint Security Tools - signatures updated, modules checked (EDR sensor ON), 
 Intel Driver & Support Assistant updated – ()
