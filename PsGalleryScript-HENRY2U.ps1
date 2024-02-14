@@ -75,7 +75,8 @@ how to start settings from ps
 
 
 # https://github.com/oneget/oneget
-
 Install-Module -Name PackageManagement
 
+# This registers Microsoft Update via a predifened GUID with the Windows Update Agent.
+ RegisterMicrosoftUpdate.ps1
 
