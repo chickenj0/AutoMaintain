@@ -1,6 +1,6 @@
 # PROD - Maintenance script
 
-Backups - Egnyte
+# Backups - Egnyte
 
 
 # Install PowerShell
