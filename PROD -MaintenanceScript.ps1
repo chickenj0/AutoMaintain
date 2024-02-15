@@ -1,14 +1,15 @@
 # PROD - Maintenance script
 
-Backups - Egnyte
+# MSP360 Backup - N/A
 
 
 # Install PowerShell
 winget install --id Microsoft.Powershell --source winget
 
-
 # Set Admin:Powershell as default terminal
 Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Name 'PowerShell 7' -Value 'C:\Program Files\PowerShell\7\pwsh.exe'
+
+        # need logic here for if no terminal 
 
 # Permissions set - RemoteSigned 
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned 
@@ -22,7 +23,7 @@ Install-Module PowerShellGet
 # Install PSWindowsUpdate
 Install-Module PSWindowsUpdate
 
-# Wpdate WindowsOS & WinGet
+# Update WindowsOS & WinGet
 # PSWindowsUpdate update - ()
 # WinGet upgrade - ()
 Get-WindowsUpdate -Install && winget upgrade --all
@@ -56,7 +57,7 @@ Disk retrim -
 System file check 
 
 
-BitDefender Endpoint Security Tools - signatures updated, modules checked (EDR sensor ON), 
+BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
 Intel Driver & Support Assistant updated – ()
 
 

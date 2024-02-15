@@ -39,3 +39,14 @@ On Windows 10 and 11, Microsoft uses the Update Session Orchestrator Client (Uso
 Example command:
 
 UsoClient.exe startscan
+
+
+Get-Command -Module WindowsUpdateProvider
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-WUAVersion                                     1.0.0.2    WindowsUpdateProvider
+Function        Get-WUIsPendingReboot                              1.0.0.2    WindowsUpdateProvider
+Function        Get-WULastInstallationDate                         1.0.0.2    WindowsUpdateProvider
+Function        Get-WULastScanSuccessDate                          1.0.0.2    WindowsUpdateProvider
+Function        Install-WUUpdates                                  1.0.0.2    WindowsUpdateProvider
+Function        Start-WUScan                                       1.0.0.2    WindowsUpdateProvider
