@@ -1,7 +1,8 @@
 # PROD - Maintenance script
 
 # MSP360 Backup - N/A
-
+# BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
+# Intel Driver & Support Assistant updated – ()
 
 # Install PowerShell
 winget install --id Microsoft.Powershell --source winget
@@ -52,21 +53,16 @@ Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'verifyonly'
 Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'scannow'
 
 
-Disk cleanup – () 
-Disk retrim - 
-System file check 
-
-
-BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
-Intel Driver & Support Assistant updated – ()
 
 
 
-need something to copy and paste documentation 
-need to edit registry to re enable auto updates 
-need something to launch then close cmd to run auto update
-how to start msstore from PS
-how to start settings from ps
+
+
+# need something to copy and paste documentation 
+# need to edit registry to re enable auto updates 
+# need something to launch then close cmd to run auto update
+# how to start msstore from PS
+# how to start settings from ps
 
 
 
