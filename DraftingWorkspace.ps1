@@ -50,3 +50,8 @@ Function        Get-WULastInstallationDate                         1.0.0.2    Wi
 Function        Get-WULastScanSuccessDate                          1.0.0.2    WindowsUpdateProvider
 Function        Install-WUUpdates                                  1.0.0.2    WindowsUpdateProvider
 Function        Start-WUScan                                       1.0.0.2    WindowsUpdateProvider
+
+
+winget list --name PowerShell --upgrade-available
+
+$PSVersionTable.PSVersion

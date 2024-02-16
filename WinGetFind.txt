@@ -1,0 +1,303 @@
+ winget find Adobe
+ 
+ Adobe Photoshop                              XPFD4T9N395QN6              Unknown                 msstore
+Adobe Express                                9P94LH3Q1CP5                Unknown                 msstore
+Adobe Acrobat Reader DC                      XPDP273C0XHQH2              Unknown                 msstore
+Adobe Fresco                                 XP8C8R0ZKZR27V              Unknown                 msstore
+Adobe Creative Cloud                         XPDLPKWG9SW2WD              Unknown                 msstore
+Adobe Photoshop Express                      9WZDNCRFJ27N                Unknown                 msstore
+Adobe Content Viewer                         9WZDNCRFJBZ1                Unknown                 msstore
+Adobe Experience Manager Forms               9ND12RLXTGTT                Unknown                 msstore
+Adobe Photoshop Express Toshiba version only 9WZDNCRDFSG4                Unknown                 msstore
+Avocode                                      Avocode.Avocode             4.15.6       Tag: adobe winget
+Adobe Acrobat Reader DC (64-bit)             Adobe.Acrobat.Reader.64-bit 23.008.20470 Tag: adobe winget
+Adobe Acrobat Reader DC                      Adobe.Acrobat.Reader.32-bit 23.008.20470 Tag: adobe winget
+Adobe DNG Converter                          Adobe.DNGConverter          15.3.1                  winget
+Cryptr                                       Adobe.Cryptr                0.5.0                   winget
+Brackets                                     Adobe.Brackets              1.14.17770              winget
+Adobe Connect                                Adobe.AdobeConnect          21.11.22                winget
+
+
+PS C:\Users\Owner> winget find intel
+Name                                            Id                                   Version      Match                      Source
+------------------------------------------------------------------------------------------------------------------------------------
+Intel® Graphics Command Center                  9PLFNLNT3G5G                         Unknown                                 msstore
+Intel® Graphics Command Center (Beta)           9NMR79ZTJFTC                         Unknown                                 msstore
+Intel® Unison™                                  9PP9GZM2GN26                         Unknown                                 msstore
+Intel® Optane™ Memory and Storage Management    9MZNG5HZWZ1T                         Unknown                                 msstore
+Intel® Retail Experience Tool                   9NK66F5K81T6                         Unknown                                 msstore
+Intel® Retail Partner Manager                   9P5CBTVMCRN4                         Unknown                                 msstore
+Intel(R) Management and Security Status         9MTSNNP9CVTN                         Unknown                                 msstore
+Intel® Application Optimization                 9NZ98VNK5X1S                         Unknown                                 msstore
+Intel® Virtual RAID on CPU                      9NKZ23F1NFKV                         Unknown                                 msstore
+Intel® NUC Software Studio                      9NT0ZDV64HTC                         Unknown                                 msstore
+Intel® Virtual RAID on CPU Storage Management … 9PJZT9DS3RW3                         Unknown                                 msstore
+Intel® NUC Software Studio for Laptops          9NMV6N679N99                         Unknown                                 msstore
+Board Intel                                     9NBLGGH4P06F                         Unknown                                 msstore
+Assistant DataBot: Artificial Intelligence      9WZDNCRFJ0BJ                         Unknown                                 msstore
+Nexia Home Intelligence                         9WZDNCRDZCC9                         Unknown                                 msstore
+SIW                                             TopalaSoftwareSolutions.SIW          2024.02.11.0 Tag: intel                 winget
+SolidigmTM Storage Tool                         Solidigm.StorageTool                 1.11         Tag: intel                 winget
+CPUID TAICHI CPU-Z                              CPUID.CPU-Z.TAICHI                   2.06         Tag: intel                 winget
+CPUID ROG CPU-Z                                 CPUID.CPU-Z.ROG                      2.08         Tag: intel                 winget
+CPUID PHANTOM CPU-Z                             CPUID.CPU-Z.PHANTOM                  2.06         Tag: intel                 winget
+CPUID CPU-Z MSI                                 CPUID.CPU-Z.MSI                      2.06         Tag: intel                 winget
+CPUID CPU-Z Gigabyte                            CPUID.CPU-Z.GBT                      2.06         Tag: intel                 winget
+CPUIDCoolerMaster CPU-Z                         CPUID.CPU-Z.CM                       2.06         Tag: intel                 winget
+CPUID CPU-Z OC Formula                          CPUID.CPU-Z.ASR                      2.05         Tag: intel                 winget
+CPUID CPU-Z Aorus                               CPUID.CPU-Z.AORUS                    2.06         Tag: intel                 winget
+CPUID CPU-Z                                     CPUID.CPU-Z                          2.09         Tag: intel                 winget
+Workspace ONE Intelligent Hub                   VMware.IntelligentHub                23.2.8.0                                winget
+IntelliJ IDEA Ultimate Edition (EAP)            JetBrains.IntelliJIDEA.Ultimate.EAP  241.11761.10                            winget
+IntelliJ IDEA Ultimate Edition                  JetBrains.IntelliJIDEA.Ultimate      2023.3.3                                winget
+IntelliJ IDEA Educational Edition               JetBrains.IntelliJIDEA.Edu           2022.2.2                                winget
+IntelliJ IDEA Community Edition (EAP)           JetBrains.IntelliJIDEA.Community.EAP 241.11761.10                            winget
+IntelliJ IDEA Community Edition                 JetBrains.IntelliJIDEA.Community     2023.3.3                                winget
+Intel PresentMon                                Intel.PresentMon.Beta                0.6.0.0                                 winget
+OSPRay                                          Intel.OSPRay                         3.0.0                                   winget
+Iometer                                         Intel.Iometer                        1.1.0                                   winget
+Intel® Driver & Support Assistant               Intel.IntelDriverAndSupportAssistant 23.4.39.9                               winget
+Intel Wi-Fi Drivers                             Intel.WiFiDrivers                    23.20.0                                 winget
+RubyMine (EAP)                                  JetBrains.RubyMine.EAP               241.11761.9  Tag: intellij              winget
+RubyMine                                        JetBrains.RubyMine                   2023.3.3     Tag: intellij              winget
+JetBrains Gateway                               JetBrains.Gateway                    2023.3.3     Tag: intellij              winget
+CLion (EAP)                                     JetBrains.CLion.EAP                  241.11761.23 Tag: intellij              winget
+CLion                                           JetBrains.CLion                      2023.3.3     Tag: intellij              winget
+Android Studio Canary                           Google.AndroidStudio.Canary          2023.3.1.6   Tag: intellij              winget
+Android Studio Beta                             Google.AndroidStudio.Beta            2023.1.1.25  Tag: intellij              winget
+Android Studio                                  Google.AndroidStudio                 2023.1.1.28  Tag: intellij              winget
+Microsoft PowerBI Desktop                       Microsoft.PowerBI                    2.124.1052.0 Tag: business-intelligence winget
+
+
+
+
+PS C:\Users\Owner> winget find asus
+Name                               Id                      Version  Match              Source
+----------------------------------------------------------------------------------------------
+MyASUS                             9N7R5S6B0ZZH            Unknown                     msstore
+ASUS Keyboard Hotkeys              9PK20DG5FB6B            Unknown                     msstore
+ProArt Creator Hub                 9NM0HH6WDN7Q            Unknown                     msstore
+ASUS Dial & Control Panel          9P1PR01M9DLM            Unknown                     msstore
+GlideX                             9PLH2SV1DVK5            Unknown                     msstore
+Asus Router Monitor                9NBLGGH5XFJZ            Unknown                     msstore
+ASUS Smart Input                   9MT4L79Z1G0N            Unknown                     msstore
+ASUS ExpertWidget                  9N6R2R7ZT25F            Unknown                     msstore
+ASUS Quick Launch                  9NRK1Z0J5N3Q            Unknown                     msstore
+ASUS Windows Mixed Reality Headset 9N0PLKMM3SC3            Unknown                     msstore
+CPUID ROG CPU-Z                    CPUID.CPU-Z.ROG         2.08     Tag: asus          winget
+g-helper                           seerge.g-helper         0.151    Tag: asus          winget
+ArmouryCrate                       Asus.ArmouryCrate       5.6.10.0                    winget
+G14ControlV2                       AlexRedden.G14ControlV2 0.2.2    Tag: asus-zephyrus winget 
+
+
+PS C:\Users\Owner> winget find hp
+Name                                   Id                                      Version        Match                 Source
+---------------------------------------------------------------------------------------------------------------------------
+HP Smart                               9WZDNCRFHWLH                            Unknown                              msstore
+HP Scan and Capture                    9WZDNCRFHWL0                            Unknown                              msstore
+HP PC Hardware Diagnostics Windows     9P4PNDG7L782                            Unknown                              msstore
+HP QuickDrop                           9PCZPR0BVQQL                            Unknown                              msstore
+HP Cloud Recovery Tool                 9MTKS9PR7R3N                            Unknown                              msstore
+HP Registration                        9WZDNCRFHWL2                            Unknown                              msstore
+HP Enhanced Lighting                   9N0Z0X2QTN0H                            Unknown                              msstore
+HP Anywhere                            9WZDNCRDRD31                            Unknown                              msstore
+HP Display Center                      9NT6FQ9KQF90                            Unknown                              msstore
+HP DesignJet Virtual Demo              9MSRFGV0R2Q4                            Unknown                              msstore
+HP Stitch And Latex Virtual Demo       9NXD2LZDL78B                            Unknown                              msstore
+HP Programmable Key                    9MW15F21R5G8                            Unknown                              msstore
+HP POS Demo                            9NBMQTJVTQZP                            Unknown                              msstore
+OMEN Gaming Hub                        9NQDW009T0T5                            Unknown                              msstore
+HP Elite Earbuds                       9PJSTM7SFJG5                            Unknown                              msstore
+HP Cloud Recovery Tool                 HP.HPCloudRecoveryTool                  2.4.2          Tag: hp               winget
+HP Prime Virtual Calculator            HP.PrimeVirtualCalculator               2.1.14181.330                        winget
+HP Image Assistant                     HP.ImageAssistant                       5.1.11                               winget
+HP Client Management Script Library    HP.HPCMSL                               1.6.8                                winget
+SciDAVis                               HighPerformanceCoders.SciDAVis          2.8                                  winget
+
+
+PS C:\Users\Owner> winget find splashtop
+Name                                                  Id                                         Version   Source
+-------------------------------------------------------------------------------------------------------------------
+Splashtop Business – Secure Remote Access and Support 9NKVM63J25PB                               Unknown   msstore
+Splashtop Personal - Remote Desktop                   9WZDNCRFJ4MF                               Unknown   msstore
+Splashtop Personal - Remote Desktop Software          9P3JKQN48DNF                               Unknown   msstore
+Splashtop Wired XDisplay Agent                        Splashtop.SplashtopWiredXDisplay           1.5.8.3   winget
+Splashtop Streamer Deployment (MSI)                   Splashtop.SplashtopStreamer.Deployment.MSI 3.6.4.0   winget
+Splashtop Streamer Deployment                         Splashtop.SplashtopStreamer.Deployment     3.6.4.0   winget
+Splashtop Streamer                                    Splashtop.SplashtopStreamer                3.6.4.0   winget
+Splashtop Personal                                    Splashtop.SplashtopPersonal                3.5.801.0 winget
+Splashtop Business                                    Splashtop.SplashtopBusiness                3.6.201.0 winget
+Splashtop SOS - On-Demand Remote Support              Splashtop.SOS                              3.6.4.0   winget
+
+
+
+PS C:\Users\Owner> winget find nvidia
+Name                            Id                                      Version    Match       Source
+------------------------------------------------------------------------------------------------------
+NVIDIA Control Panel            9NF8H0H7WMLT                            Unknown                msstore
+NVCleanstall                    TechPowerUp.NVCleanstall                1.16.0     Tag: nvidia winget
+NVIDIA GeForce Experience       Nvidia.GeForceExperience                3.27.0.120 Tag: nvidia winget
+NVIDIA CUDA Toolkit             Nvidia.CUDA                             12.3.2     Tag: nvidia winget
+NVIDIA Broadcast                Nvidia.Broadcast                        1.4.0.29   Tag: nvidia winget
+Moonlight Game Streaming Client MoonlightGameStreamingProject.Moonlight 5.0.1.0    Tag: nvidia winget
+ICAT                            Nvidia.ICAT                             0.6.1      Tag: nvidia winget
+NVIDIA Video Effects            Nvidia.VideoEffectsSDK.20xx-Turing      0.6.5                  winget
+RTX Voice                       Nvidia.RTXVoice                         0.5.12.6               winget
+NVIDIA PhysX (Legacy)           Nvidia.PhysXLegacy                      9.13.0604              winget
+NVIDIA PhysX System Software    Nvidia.PhysX                            9.21.0713              winget
+NVIDIA Omniverse Launcher       Nvidia.Omniverse                        1.9.8                  winget
+NVIDIA GeForce NOW              Nvidia.GeForceNow                       2.0.58.134             winget
+SHAREVOX                        y-chan.SHAREVOX.NVIDIA                  0.2.1                  winget
+
+
+
+Name                          Id                      Version  Match         Source
+------------------------------------------------------------------------------------
+AutoCAD - DWG Viewer & Editor 9WZDNCRFJCTK            Unknown                msstore
+EAGLE                         Autodesk.EAGLE          9.6.2    Tag: autodesk winget
+Sketchbook                    Autodesk.sketchbook     8.7.1.0                winget
+Autodesk Desktop App          Autodesk.DesktopApp     8.4.0.50               winget
+Autodesk Access               Autodesk.AutodeskAccess 1.10.4.0               winget
+
+
+
+
+PS C:\Users\Owner> winget find elan
+Name                                                    Id                                 Version Match           Source
+--------------------------------------------------------------------------------------------------------------------------
+ELAN TrackPoint for Thinkpad                            9PKZNRN46X9J                       Unknown                 msstore
+Elan Skis                                               9WZDNCRDCC9P                       Unknown                 msstore
+ELAN Touchpad for PTP                                   9N5F8ST11QNH                       Unknown                 msstore
+ELAN Touchpad for VersaPro VB                           9P67PTQB5JH1                       Unknown                 msstore
+ELAN TrackPoint for Thinkpad (USB)                      9N3HZRSC38CZ                       Unknown                 msstore
+ELAN Touchpad for Thinkpad                              9N9MM3PJ1LPF                       Unknown                 msstore
+ELAN Tool Collection                                    9NPHBXG9S9KW                       Unknown                 msstore
+ELAN EzTiltPen                                          9NF3GCJHDD2C                       Unknown                 msstore
+ELAN                                                    9NBLGGH4RRW5                       Unknown                 msstore
+TrackPoint                                              9MVG3V6RS41X                       Unknown                 msstore
+Acer Fingerprint PBA                                    9P75T4LDMPDF                       Unknown                 msstore
+ETDProperties                                           9PCFVJPQ0FRL                       Unknown                 msstore
+ETD Properties For I2C                                  9N666SDJ5K6M                       Unknown                 msstore
+HP Impreza Pen                                          9NSCTMJ4NPSZ                       Unknown                 msstore
+Elanco GloEDGE                                          9N35PRW28RW0                       Unknown                 msstore
+Widelands                                               WidelandsDevelopmentTeam.Widelands 1.0                     winget
+Remote LAN Control                                      SamyGO.RemoteLANControl            0.8                     winget
+ELAN_6.6                                                MPI.ELAN                           6.6                     winget
+Tous les fichiers dll avec des images dans Windows (TE) LelanceFlamer.TLFDADIDW            3.7.4                   winget
+Universal Extractor                                     jbreland.uniextract                1.6.1                   winget
+AutoFLAC                                                jbreland.autoflac                  1.2                     winget
+Freelancer Desktop App                                  Freelancer.Desktop                 2.6.3                   winget
+Cue                                                     CueLang.Cue                        0.7.0                   winget
+Invoncify                                               AndresMorelos.Invoncify            1.30.4  Tag: freelancer winget
+
+
+
+
+PS C:\Users\Owner> winget find lenovo
+Name                                           Id                                  Version       Match       Source
+--------------------------------------------------------------------------------------------------------------------
+Lenovo Vantage                                 9WZDNCRFJ4MV                        Unknown                   msstore
+Lenovo Commercial Vantage                      9NR5B8GVVM13                        Unknown                   msstore
+Lenovo Hotkeys                                 9PCMMNB260TX                        Unknown                   msstore
+Lenovo Display Control Center                  9N6PGT5DKQFQ                        Unknown                   msstore
+Lenovo Go Central                              XPDFF8GQHL3F6B                      Unknown                   msstore
+Legion Arena by Lenovo                         XPFMJFJG7B2GB0                      Unknown                   msstore
+Lenovo Pen Settings                            9MVLWT5DMSKR                        Unknown                   msstore
+Lenovo Accessories and Display Manager         XP8CJS4GF2R4QS                      Unknown                   msstore
+Lenovo Go Portal                               9NT5XZ640J0D                        Unknown                   msstore
+Киев: с утра и до рассвета c Lenovo Explorer   9N41TTDFTQTV                        Unknown                   msstore
+Kyiv: from dusk till dawn with Lenovo Explorer 9NMVPTSHC7P0                        Unknown                   msstore
+Київ: з ранку до світанку з Lenovo Explorer    9NRG4Z3HKG4L                        Unknown                   msstore
+Ready For Assistant                            XP8JRF5SXV03ZM                      Unknown                   msstore
+Lenovo Smart Paper                             9N4WNS3NFMGC                        Unknown                   msstore
+Lenovo Smart Appearance                        9NRLFDZ54PZB                        Unknown                   msstore
+Lenovo Display Refresh                         9PFCKWJHWXR5                        Unknown                   msstore
+Lenovo Freestyle                               9N2BC6NH095K                        Unknown                   msstore
+Lenovo Bud'dy                                  9PP0ZK0R99L3                        Unknown                   msstore
+Lenovo Training Manual                         9P20B8X77T63                        Unknown                   msstore
+Lenovo Update Retriever                        Lenovo.UpdateRetriever              5.00.0096     Tag: lenovo winget
+Lenovo Thin Installer                          Lenovo.ThinInstaller                1.04.01.0004  Tag: lenovo winget
+Lenovo System Update                           Lenovo.SystemUpdate                 5.08.02.25    Tag: lenovo winget
+Lenovo Quick Clean                             Lenovo.QuickClean                   1.02.0051     Tag: lenovo winget
+Lenovo Migration Assistant                     Lenovo.MigrationAssistant           2.1.4.6       Tag: lenovo winget
+Lenovo Dock Manager                            Lenovo.DockManager                  1.5.0.6       Tag: lenovo winget
+Lenovo Legion Toolkit                          BartoszCichecki.LenovoLegionToolkit 2.20.1        Tag: lenovo winget
+Legion Accessory Central                       Lenovo.LegionAccessoryCentral       2.0.6.06161               winget
+联想乐云                                       Lenovo.LeCloud                      2.501.25.0                winget
+联想应用商店                                   Lenovo.LeAppStore                   9.0.1230.1220             winget
+Lenovo Service Bridge                          Lenovo.ServiceBridge                5.0.2.14                  winget
+
+
+PS C:\Users\Owner> winget find displaylink
+Name                 Id                         Version     Source
+--------------------------------------------------------------------
+DisplayLink Manager  9N09F8V8FS02               Unknown     msstore
+DisplayLink Graphics DisplayLink.GraphicsDriver 11.2.3337.0 winget
+
+
+
+
+
+PS C:\Users\Owner> winget find apple
+Name                             Id                              Version       Match               Source
+----------------------------------------------------------------------------------------------------------
+Apple Devices                    9NP83LWLPZ9K                    Unknown                           msstore
+iCloud                           9PKTQ5699M62                    Unknown                           msstore
+Apple FCU Remote Deposit Capture 9NR16XTVN3P7                    Unknown                           msstore
+Drawing Apple in oils            9NBLGGH2WLGL                    Unknown                           msstore
+A for Apple                      9NBLGGH10F0V                    Unknown                           msstore
+iMazing Profile Editor           DigiDNA.iMazingProfileEditor    1.7.1.0       Tag: apple          winget
+iMazing                          DigiDNA.iMazing                 2.17.17.0     Tag: apple          winget
+Safari                           Apple.Safari                    3.525.21.0    Tag: apple          winget
+Applet Runner Pro                Japplis.AppletRunnerPro         2.8                               winget
+Trippy                           FujiApple.Trippy                0.9.0                             winget
+AppleWin                         AppleWin.AppleWin               1.30.17.0                         winget
+Windows Migration Assistant      Apple.WindowsMigrationAssistant 2.4.3.1                           winget
+ProRes RAW for Windows           Apple.ProResRAWforWindows       1.3                               winget
+iTunes                           Apple.iTunes                    12.13.1.3                         winget
+DVD or CD Sharing                Apple.DVDorCDSharing            1.0.1.4                           winget
+AirPort                          Apple.AirPort.BaseStationUpdate 5.2.1.8                           winget
+AirPort                          Apple.AirPort                   5.6.1.2                           winget
+HandBrake                        HandBrake.HandBrake             1.7.3         Tag: pineapple-logo winget
+Cider Nightly                    CiderCollective.Cider.Nightly   1.6.0-beta.98 Tag: apple-music    winget
+Cider                            CiderCollective.Cider           1.6.1         Tag: apple-music    winget
+
+
+
+
+PS C:\Users\Owner> winget find dell
+Name                                        Id                           Version  Match                Source
+--------------------------------------------------------------------------------------------------------------
+Dell Remote Assist                          9PM9GW9GFLNX                 Unknown                       msstore
+CinemaColor for Dell                        9NRBZ5ZFDV61                 Unknown                       msstore
+Media Suite Essentials for Dell             9NN8BSS5N72F                 Unknown                       msstore
+Dell Digital Delivery                       9PPRLNT023WC                 Unknown                       msstore
+Dell Customer Connect                       9NF0GGQ5S6QX                 Unknown                       msstore
+Dell Touchpad Assistant                     9N5GLLFVS68R                 Unknown                       msstore
+PremierColor for Dell                       9N9PJGJG009K                 Unknown                       msstore
+Canvas Connect                              9NFGSRX9SBCT                 Unknown                       msstore
+Dell Command | Update for Windows Universal Dell.CommandUpdate.Universal 4.9.0    Tag: dell            winget
+Dell Command | Update                       Dell.CommandUpdate           4.6.0    Tag: dell            winget
+Dell Display Manager                        Dell.DisplayManager          2.2.0.43                      winget
+Dell Command | Configure                    Dell.CommandConfigure        4.11.0                        winget
+Gama Alpha                                  GamaPlatform.GamaAlpha       1.9.3-4  Tag: modelling       winget
+Gama                                        GamaPlatform.Gama            1.9.2    Tag: modelling       winget
+FreeCAD                                     FreeCAD.FreeCAD              0.21.2   Tag: 3d-modellierung winget
+
+
+PS C:\Users\Owner> winget find mozilla
+Name                      Id                               Version      Match        Source
+--------------------------------------------------------------------------------------------
+Mozilla Firefox           9NZVDKPMR9RD                     Unknown                   msstore
+Mozilla Thunderbird Email 9PM5VM1S3VMQ                     Unknown                   msstore
+Mozilla VPN               Mozilla.VPN                      2.9.0.0      Tag: mozilla winget
+Mozilla Firefox ESR       Mozilla.Firefox.ESR              115.7.0      Tag: mozilla winget
+Firefox Developer Edition Mozilla.Firefox.DeveloperEdition 120.0b9      Tag: mozilla winget
+Mozilla Firefox           Mozilla.Firefox                  122.0.1      Tag: mozilla winget
+MozBackup                 JasnaPaka.MozBackup              1.5.1        Tag: mozilla winget
+Betterbird                Betterbird.Betterbird            115.7.0-bb23 Tag: mozilla winget
+Mozilla Thunderbird       Mozilla.Thunderbird              115.7.0                   winget
+Secrets OPerationS        Mozilla.SOPS                     3.7.3                     winget
+SeaMonkey                 Mozilla.SeaMonkey                2.53.16                   winget
+geckodriver               Mozilla.GeckoDriver              0.33.0                    winget
+Firefox Nightly           Mozilla.Firefox.Nightly          116.0a1                   winget

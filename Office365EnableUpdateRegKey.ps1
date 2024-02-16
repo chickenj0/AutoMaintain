@@ -1,0 +1,1 @@
+HKEY_LOCAL_MACHINE\software\policies\microsoft\office\16.0\common\OfficeUpdate

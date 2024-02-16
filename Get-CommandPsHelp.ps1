@@ -1,4 +1,4 @@
-# To find out which module a specific cmdlet belongs to in PowerShell, you can use the Get-Command cmdlet with the -Name parameter. Here's an example using the Get-SenderIdConfig cmdlet:
+a# To find out which module a specific cmdlet belongs to in PowerShell, you can use the Get-Command cmdlet with the -Name parameter. Here's an example using the Get-SenderIdConfig cmdlet:
 
 # powershell
 # Copy code
