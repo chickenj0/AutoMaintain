@@ -83,4 +83,10 @@ $trigger = New-ScheduledTaskTrigger -Daily -At "3:00AM"
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "AutoUpdateTask"
 ```
 
-Remember to test any changes in a safe environment before deploying the script widely.
+
+# how to enable 
+# - get the latest updates as soon as theyre available 
+# - receive updates for other MS products 
+# - notify me when a restart is required to finish updating
+
+# also check power options
