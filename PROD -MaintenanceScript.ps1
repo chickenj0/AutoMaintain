@@ -2,16 +2,9 @@
 
 # MSP360 Backup - N/A , USB only , cloud only , USB then cloud , education given , schedule set
 # BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
-# Intel Driver & Support Assistant updated –
-
-# Install PowerShell
-winget install --id Microsoft.Powershell --source winget
-
-# Set Admin:Powershell to open on login
-Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Name 'PowerShell 7' -Value 'C:\Program Files\PowerShell\7\pwsh.exe'
-
-        # need logic here for if no terminal 
-
+# Intel Driver & Support Assistant - updated
+# Lenovo Vantage 
+# MS Store Apps - updated 
 # Permissions set - RemoteSigned 
 # Enable Restore Point & restore point 'MaintenanceRestorePoint' created / restore point already created
 # Install PowerShellGet
@@ -59,7 +52,7 @@ sfc /scannow
 # Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'verifyonly'
 # Start-Process -FilePath "C:\Windows\System32\sfc.exe" -ArgumentList 'scannow'
 
-
+# enable storage sense 
 
 # need something to copy and paste documentation 
 # need to edit registry to re enable auto updates 

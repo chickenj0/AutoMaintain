@@ -1,0 +1,28 @@
+BackupProcedureInHouse
+
+Into bios 
+> boot menu / F8
+
+
+
+
+Using Ventoy
+>Rdrive linux / PE 
+> try graphics / normal mode first
+
+plug in network cable 
+boot off drive in bios 
+ if uefi have to enrol certificate ****
+
+ reboot 
+
+ boot off again and into USB ventoy
+ > clone disk (top L:)_
+> click WHOLE DRIVE not individual partitions
+ > map networkdrive 
+ > DHCP
+ > 192.168.0.2
+ > share data 
+ > user admin
+ > pword RACauto870 
+
