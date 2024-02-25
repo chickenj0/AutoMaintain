@@ -6,7 +6,7 @@
 # Open a Command Prompt or PowerShell window.
 # Navigate to the directory where the text file is saved.
 # Run the following command:
-winget install -i my_apps.txt
+# winget install -i my_apps.txt
 
 # This will install all the apps listed in the text file.
 # Individual Commands Approach:
@@ -14,7 +14,7 @@ winget install -i my_apps.txt
 # winget search "App Name"
 
 # Once you have the app name or ID, install it using
-winget install <ID or Name>
+# winget install <ID or Name>
 
 # Repeat this command for each individual app you want to install.
 # Remember that winget accepts only one program per command, so using a batch file or combining individual commands is essential for installing multiple apps efficiently1234. Happy app installing! ?
