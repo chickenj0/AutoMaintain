@@ -10,6 +10,8 @@
 # Install PowerShellGet
 # Install NuGet
 # Install PSWindowsUpdate
+# Office and 365 updated 
+
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned ; Enable-ComputerRestore -Drive "C:\" ; Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS"  ; Install-Module PowerShellGet  ; Install-PackageProvider -Name NuGet ; Install-Module PSWindowsUpdate
 
 # PSWindowsUpdate update -
@@ -38,6 +40,13 @@ Taskmgr.exe
 # Disk ReTrim - allocations trimmed 
 # System File Check – found corrupt files and successfully repaired
 cleanmgr ; Optimize-Volume -DriveLetter C -ReTrim -Verbose ; sfc /scannow
+
+
+# MSP360 Backup -  USB check quick restore successful
+
+
+
+
 
 # Disk ReTrim - allocations trimmed 
 # Optimize-Volume -DriveLetter C -analyse -Verbose
