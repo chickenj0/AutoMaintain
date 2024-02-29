@@ -18,12 +18,11 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned ; Enable-Co
 Get-WindowsUpdate -Install ; winget upgrade --all --include-unknown ; winget install microsoft.teams.classic --source winget
 
 # Adobe Acrobat Reader - checked
-# Windows Caffeinated app -installed
 # MS Store Apps - updated
 # Apple iTunes - checked
 # VLC - checked
 # 7z - checked
-winget install adobe.acrobat.reader.64-bit ; winget install 9PBVHHSN78BL ; winget install apple.itunes ; winget install VideoLAN.VLC ; winget install 7zip.7zip
+winget install adobe.acrobat.reader.64-bit ; winget install apple.itunes ; winget install VideoLAN.VLC ; winget install 7zip.7zip
 
 # Office & MS 365 updates - OfficeC2RClient.exe - checked
 # cmd.exe
