@@ -45,7 +45,7 @@ winget install adobe.acrobat.reader.64-bit ;  winget install apple.itunes ; wing
     # -Force parameter, this command will install version '2.2.5' in side-by-side with version '1.0.0.1'.
 
 
-    # PSWindowsUpdate update -
+# PSWindowsUpdate update -
 # WinGet update - 
 # Microsoft Teams Classic - checked
         # how to open new powershell window or run commands in parallel
