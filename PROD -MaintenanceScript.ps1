@@ -52,6 +52,12 @@ winget install adobe.acrobat.reader.64-bit ;  winget install apple.itunes ; wing
         # probably open new terminal , then write to the terminal 'winget upgrade ...'
 Get-WindowsUpdate -Install ; winget upgrade --all --include-unknown ; winget install microsoft.teams.classic --source winget
 
+# Adobe Acrobat Reader - checked
+# MS Store Apps - updated
+# Apple iTunes - checked
+# VLC - checked
+# 7z - checked
+winget install adobe.acrobat.reader.64-bit ; winget install apple.itunes ; winget install VideoLAN.VLC ; winget install 7zip.7zip
 
 
 # Office & MS 365 updates - OfficeC2RClient.exe - checked
