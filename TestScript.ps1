@@ -1,67 +1,111 @@
-# Test script
+# Specify the path for the log file
+$logFilePath = "C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop\VerboseLogs.txt"
 
-# Setting Permissions
-Write-host "Setting permissions to RemoteSigned..."
-set-executionpolicy -scope currentuser -executionpolicy remotesigned
+# Set the execution policy to RemoteSigned for the current user.
+Write-Host "Setting permissions to RemoteSigned..."
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force;
 
-# Create restore point
-Write-Host "Creating restore point..."
-Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS"
+# Enable System Restore for the C: drive.
+Write-Host "Enabling System Restore for C: drive..."
+Enable-ComputerRestore -Drive "C:\";
 
-# Update Windows
-Write-Host "Checking for Windows updates..."
-Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
-Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser
-Import-Module PSWindowsUpdate
-Get-WindowsUpdate -Install -AcceptAll 
+# Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+Write-Host "Creating restore point for modifying settings..."
+Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
 
-# Update PowerShellGet
-Write-Host "Updating PowerShellGet..."
-Install-Module PowerShellGet -Force -AllowClobber -Scope CurrentUser
+# Install the NuGet package provider with the Force parameter for the current user scope.
+Write-Host "Installing NuGet package provider..."
+Install-PackageProvider -Name NuGet -Force -Scope CurrentUser -Confirm:$false;
+
+# Set the installation policy for the PSGallery repository to 'Trusted.'
+Write-Host "Setting PSGallery repository installation policy to Trusted..."
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+
+# Install the PowerShellGet module with the Force parameter.
+Write-Host "Installing PowerShellGet module..."
+Install-Module PowerShellGet -Force -Confirm:$false;
+
+# Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+Write-Host "Installing/Updating PSWindowsUpdate module..."
+Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser -Confirm:$false;
+
+# Import the PSWindowsUpdate module.
+Write-Host "Importing PSWindowsUpdate module..."
+Import-Module PSWindowsUpdate -Confirm:$false;
 
 # Update all PowerShell modules
 Write-Host "Updating all PowerShell modules..."
-Update-Module -Name *
+Update-Module -Name * -Force -Confirm:$false;
 
-# Updating WinGet package manager
-Write-Host "Updating WinGet package manager..."
-Winget upgrade --all --include-unknown
+# Get and install all available Windows updates, accepting all prompts.
+Write-Host "Checking for Windows updates..."
+Start-Process powershell -Verb RunAs -ArgumentList "Get-WindowsUpdate -Install -AcceptAll" -Wait;
+
+# Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+Write-Host "Installing Adobe Acrobat Reader..."
+winget install adobe.acrobat.reader.64-bit -e;
+
+# Install Apple iTunes using the Windows Package Manager (winget).
+Write-Host "Installing Apple iTunes..."
+winget install apple.itunes -e;
+
+# Install VLC Media Player using the Windows Package Manager (winget).
+Write-Host "Installing VLC Media Player..."
+winget install VideoLAN.VLC -e;
+
+# Install 7-Zip using the Windows Package Manager (winget).
+Write-Host "Installing 7-Zip..."
+winget install 7zip.7zip -e;
 
 # Start MS Windows Update
 Write-Host "Opening Windows Update..."
-Start-Process "ms-settings:windowsupdate"
+Start-Process powershell -Verb RunAs -ArgumentList "-NoProfile -Command { Start-Process 'ms-settings:windowsupdate' -PassThru }" -Wait -PassThru;
 
-# Openning MS Store Downloads and Updates
+# Check the exit code to determine success or failure
+if ($? -eq $true) {
+    Write-Host "Windows Update has been opened successfully."
+} else {
+    Write-Host "Failed to open Windows Update. Exit code: $($LASTEXITCODE)"
+}
+
+# Opening MS Store Downloads and Updates
 # RTFM: https://learn.microsoft.com/en-us/windows/uwp/launch-resume/launch-store-app
 Write-Host "Starting MS Windows Store Downloads and Updates..."
-Start-Process "ms-windows-store://downloadsandupdates"
+Start-Process "ms-windows-store://downloadsandupdates";
 
-# Check Adobe Acrobat, iTunes, VLC and 7zip are installed 
-Write-Host "Check Adobe Acrobat, iTunes, VLC and 7zip are installed..."
-winget install adobe.acrobat.reader.64-bit ; winget install apple.itunes ; winget install VideoLAN.VLC ; winget install 7zip.7zip
-
-# Start Disk Cleanup utility
-Write-Host "Starting Disk Cleanup..."
-Start-Process -FilePath cleanmgr -ArgumentList "/C /sageset:1" -Wait
-Start-Process -FilePath cleanmgr -ArgumentList "/S /D C:" -Wait
-
-# Start Disk ReTrimming
-Write-Host "Starting Disk Optimising and ReTrimming..."
-Optimize-Volume -DriveLetter C -ReTrim -Verbose
-
-# Start Resource Checker
-Write-Host "Scanning integrity of all protected system files..."
-SFC /VERIFYONLY
-
-# Run SFC /scannow and redirect the output to a variable
-$sfcOutput = sfc /scannow
-
-# Copy the output to the clipboard
-$sfcOutput | Set-Clipboard
-
-# Notify the user
-Write-Host "SFC /scannow output has been copied to the clipboard."
-Write-Host "Paste and hit enter to run SFC /ScanNow ?"
- 
 # Open storage sense
-Start-Process "ms-settings:storagesense"
+Write-Host "Opening Storage Sense..."
+Start-Process powershell -Verb RunAs -ArgumentList "Start-Process 'ms-settings:storagesense'" -Wait;
+
+# Run cleanmgr command
+Write-Host "Running cleanmgr command..."
+Start-Process powershell -Verb RunAs -ArgumentList "cleanmgr" -Wait;
+
+# Optimize C: drive with ReTrim
+Write-Host "Optimizing C: drive with ReTrim..."
+Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+
+# Run SFC /scannow command
+Write-Host "Running SFC /scannow command..."
+SFC /scannow;
+
+# Updating WinGet package manager
+Write-Host "Updating WinGet package manager..."
+Start-Process powershell -Verb RunAs -ArgumentList "-NoProfile -Command { winget upgrade --all --include-unknown }" -Wait;
+
+# Check the exit code to determine success or failure
+if ($? -eq $true) {
+    Write-Output "Windows Update has been opened successfully." | Tee-Object -FilePath $logFilePath -Append
+} else {
+    Write-Output "Failed to open Windows Update. Exit code: $($LASTEXITCODE)" | Tee-Object -FilePath $logFilePath -Append
+}
+
+# ... (continue with the rest of the script)
+
+# Redirecting output to log file for the entire script
+Start-Transcript -Path $logFilePath -Append
+
+# ... (continue with the rest of the script)
+
+# Stop transcript to finish logging
+Stop-Transcript

@@ -1,0 +1,1 @@
+Start-Process -FilePath "winget" -ArgumentList "upgrade --all --include-unknown" -Wait -PassThru | Tee-Object -FilePath "output.txt" -Append;

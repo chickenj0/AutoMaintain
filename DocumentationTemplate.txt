@@ -1,45 +1,36 @@
-Feb maintenance
+MSP360 Backup -  USB backed up, check quick restore successful
 
-Install PowerShell
-Permissions set - RemoteSigned 
-Enable Restore Point & Restore point 'MaintenanceRestorePoint' created
-MSP 360 updated, backup to Cloud set. Education given 
-Caffeine64 installed and started for 24hrs
-Install PowerShellGet & PSWindowsUpdate
-PSWindowsUpdate update - ()
-WinGet upgrade - ()
+Set the execution policy to RemoteSigned for the current user.
+Enable System Restore for the C: drive.
+Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+Install the NuGet package provider with the Force parameter for the current user scope.
+Set the installation policy for the PSGallery repository to 'Trusted.'
+Install the PowerShellGet module with the Force parameter.
+Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+Import the PSWindowsUpdate module.
+Update all PowerShell modules
+Get and install all available Windows updates, accepting all prompts.
+Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+Install Apple iTunes using the Windows Package Manager (winget).
+Install VLC Media Player using the Windows Package Manager (winget).
+Install 7-Zip using the Windows Package Manager (winget).
+Enabled storage sense
+Run cleanmgr command - cleaned GB = 
+Optimize C: drive with ReTrim - Allocations trimmed = 
+Run SFC /scannow – found corrupt files and successfully repaired
+Windows Update - 
+Updated WinGet package manager - 
 
-
-
-
-
-
-Office & 365 updates - OfficeC2RClient.exe - checked
-MS Store Apps – checked / updated
-Apple Software Updater – checked 
-DisplayLink Manager checked / updated
-Samsung Magician – updated
-EPSON Software Update checked
-Brother iPrint and Scan - updated
-HP DesignJet Utility checked / updated
-
-
-Edge updated
-Chrome checked
-Microsoft 365 and Office updated
-Adobe Acrobat Updater checked
-Sonic Suite Companion updated
-iTunes checked
-Java updated
-Zoom – updated
-Splashtop Streamer checked / updated
-VLC Media Player checked / updated
-BIOS checked / updated
-Adobe Acrobat (64-bit) - checked 
-Lenovo Vantage / Commercial Vantage 
-
-
-TaskMgr telemetry - OK
-Disk cleanup – () 
-Disk retrim - Allocations trimmed ()
-System file check – found corrupt files and successfully repaired 
+BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
+Intel Driver & Support Assistant -  installed updated checked
+Lenovo Vantage -  installed updated checked
+Office and 365 -  installed updated checked
+Samsung Magician -  installed updated checked
+EPSON Software Updater App -  installed updated checked
+AMD Software Installer -  installed updated checked
+DisplayLink Manager - installed updated checked
+Canon -  installed updated checked
+Apple Software Update -  installed updated checked
+HP Smart -  installed updated checked
+MyASUS -  installed updated checked
+Logitech -  installed updated checked

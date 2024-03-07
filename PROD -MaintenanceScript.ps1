@@ -75,7 +75,6 @@ Taskmgr.exe
 cleanmgr ; Optimize-Volume -DriveLetter C -ReTrim -Verbose ; sfc /scannow
 
 
-# MSP360 Backup -  USB check quick restore successful
 
 
 
@@ -110,3 +109,23 @@ sfc /scannow
 # This registers Microsoft Update via a predifened GUID with the Windows Update Agent.
  RegisterMicrosoftUpdate.ps1
 
+
+
+
+# Open storage sense
+Start-Process "ms-settings:storagesense"
+
+Chocolatey.Chocolatey
+
+# Check for driver updates (This is a generic example, might not cover all devices)
+Write-Host "Checking for driver updates..."
+Get-WmiObject Win32_PnPSignedDriver | ForEach-Object {
+    $deviceName = $_.DeviceName
+    $manufacturer = $_.Manufacturer
+    $driverVersion = $_.DriverVersion
+
+    Write-Host "Updating driver for $deviceName (Manufacturer: $manufacturer) to version $driverVersion..."
+    # Add your specific driver update command here
+}
+
+Write-Host "Software and drivers update completed."
