@@ -1,0 +1,123 @@
+**********************
+Windows PowerShell transcript start
+Start time: 20240307155228
+Username: RHONDAB01\denni
+RunAs User: RHONDAB01\denni
+Configuration Name: 
+Machine: RHONDAB01 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8576
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\denni> # Start System Information
+PS C:\Users\denni> Start-Process -FilePath "msinfo32"
+PS C:\Users\denni> # Start MSP360 
+PS C:\Users\denni> Start-Process "C:\'Program Files'\'Nerds 2 You'\'Online Backup'\'Online Backup.exe'"
+>> TerminatingError(Start-Process): "This command cannot be run due to the error: The system cannot find the file specified."
+Start-Process : This command cannot be run due to the error: The system cannot find the file specified.
+At line:1 char:1
++ Start-Process "C:\'Program Files'\'Nerds 2 You'\'Online Backup'\'Onli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
+Start-Process : This command cannot be run due to the error: The system cannot find the file specified.
+At line:1 char:1
++ Start-Process "C:\'Program Files'\'Nerds 2 You'\'Online Backup'\'Onli ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
+
+PS C:\Users\denni> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\denni> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\denni> # Enable System Restore for the C: drive.
+PS C:\Users\denni> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\denni> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\denni> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+PS C:\Users\denni> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\denni> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\denni> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\denni> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\denni> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\denni> Install-Module PowerShellGet -Force;
+PS C:\Users\denni> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\denni> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\denni> # Import the PSWindowsUpdate module.
+PS C:\Users\denni> Import-Module PSWindowsUpdate;
+PS C:\Users\denni> # Update all PowerShell modules
+PS C:\Users\denni> Update-Module -Name *;
+PS C:\Users\denni> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\denni> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\denni> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\denni> winget install adobe.acrobat.reader.64-bit;
+
+PS C:\Users\denni> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\denni> winget install apple.itunes;
+
+PS C:\Users\denni> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\denni> winget install VideoLAN.VLC;
+
+PS C:\Users\denni> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\denni> winget install 7zip.7zip;
+
+PS C:\Users\denni> # Opening MS Store Downloads and Updates
+PS C:\Users\denni> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\denni> # Open storage sense # Start MS Windows Update
+PS C:\Users\denni> Start-Process "ms-settings:storagesense";
+PS C:\Users\denni> Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\denni> # Run cleanmgr command
+PS C:\Users\denni> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -NoNewWindow -Verbose -PassThru -Wait;
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     35       3      388       2336       0.05  11584   7 cleanmgr
+
+
+PS C:\Users\denni> # Optimize C: drive with ReTrim
+PS C:\Users\denni> Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+VERBOSE: Invoking retrim on Acer (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  49% complete...
+VERBOSE: Retrim:  53% complete...
+VERBOSE: Retrim:  59% complete...
+VERBOSE: Retrim:  65% complete...
+VERBOSE: Retrim:  68% complete...
+VERBOSE: Retrim:  71% complete...
+VERBOSE: Retrim:  72% complete...
+VERBOSE: Retrim:  78% complete...
+VERBOSE: Retrim:  84% complete...
+VERBOSE: Retrim:  88% complete...
+VERBOSE: Retrim:  93% complete...
+VERBOSE: Retrim:  99% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 237.26 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 96.63 GB
+VERBOSE: 		Free space                  = 140.62 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 238
+VERBOSE: 		Allocations trimmed         = 3535
+VERBOSE: 		Total space trimmed         = 144.28 GB
+PS C:\Users\denni> # Run SFC /scannow command
+PS C:\Users\denni> SFC /scannow;
+Verification 84% complete.

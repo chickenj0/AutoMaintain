@@ -1,5 +1,4 @@
 MSP360 Backup -  USB backed up, check quick restore successful
-
 Set the execution policy to RemoteSigned for the current user.
 Enable System Restore for the C: drive.
 Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
@@ -14,23 +13,33 @@ Install Adobe Acrobat Reader using the Windows Package Manager (winget).
 Install Apple iTunes using the Windows Package Manager (winget).
 Install VLC Media Player using the Windows Package Manager (winget).
 Install 7-Zip using the Windows Package Manager (winget).
+Office and 365 -  installed updated checked
+MS Store Apps - installed updated checked
 Enabled storage sense
-Run cleanmgr command - cleaned GB = 
+Run cleanmgr command - cleaned
 Optimize C: drive with ReTrim - Allocations trimmed = 
 Run SFC /scannow – found corrupt files and successfully repaired
 Windows Update - 
 Updated WinGet package manager - 
-
 BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
-Intel Driver & Support Assistant -  installed updated checked
+
+Baseboard
+Intel Driver & Support Assistant -  
 Lenovo Vantage -  installed updated checked
-Office and 365 -  installed updated checked
-Samsung Magician -  installed updated checked
-EPSON Software Updater App -  installed updated checked
 AMD Software Installer -  installed updated checked
-DisplayLink Manager - installed updated checked
+MyASUS -  installed updated checked
+HP PC Hardware Diagnostics - 
+ACER - 
+
+3rd party software 
+Adobe Creative Cloud - installed updated checked
+Samsung Magician -  installed updated checked
+
+Printers and devices
 Canon -  installed updated checked
 Apple Software Update -  installed updated checked
-HP Smart -  installed updated checked
-MyASUS -  installed updated checked
+HP Support Assist -  installed updated checked
 Logitech -  installed updated checked
+DisplayLink Manager - installed updated checked
+Brother 
+EPSON Software Updater App -  installed updated checked
