@@ -1,0 +1,81 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240314171418
+Username: PREMSTONE05\Owner
+RunAs User: PREMSTONE05\Owner
+Configuration Name: 
+Machine: PREMSTONE05 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8488
+PSVersion: 5.1.19041.4046
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.4046
+BuildVersion: 10.0.19041.4046
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Owner> # Start System Information
+PS C:\Users\Owner> Start-Process -FilePath "msinfo32"
+PS C:\Users\Owner> # Start MSP360 
+PS C:\Users\Owner> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+>> TerminatingError(Start-Process): "This command cannot be run due to the error: The system cannot find the file specified."
+Start-Process : This command cannot be run due to the error: The system cannot find the file specified.
+At line:1 char:1
++ Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Back ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
+Start-Process : This command cannot be run due to the error: The system cannot find the file specified.
+At line:1 char:1
++ Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Back ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Start-Process], InvalidOperationException
+    + FullyQualifiedErrorId : InvalidOperationException,Microsoft.PowerShell.Commands.StartProcessCommand
+
+PS C:\Users\Owner> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Owner> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Owner> # Enable System Restore for the C: drive.
+PS C:\Users\Owner> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Owner> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Owner> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+PS C:\Users\Owner> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Owner> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\Owner> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Owner> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Owner> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Owner> Install-Module PowerShellGet -Force;
+PS C:\Users\Owner> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Owner> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\Owner> # Import the PSWindowsUpdate module.
+PS C:\Users\Owner> Import-Module PSWindowsUpdate;
+PS C:\Users\Owner> # Update all PowerShell modules
+PS C:\Users\Owner> Update-Module -Name *;
+PS C:\Users\Owner> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Owner> Get-WindowsUpdate -Install -AcceptAll;
+
+X ComputerName Result     KB          Size Title
+- ------------ ------     --          ---- -----
+1 PREMSTONE05  Accepted   KB5034441   23MB 2024-01 Security Update for Windows 10 Version 22H2 for x64-based Systems...
+1 PREMSTONE05  Accepted   KB890830    65MB Windows Malicious Software Removal Tool x64 - v5.122 (KB890830)
+1 PREMSTONE05  Accepted   KB5001716  812KB 2024-03 Update for Windows 10 Version 22H2 for x64-based Systems (KB5001716)
+1 PREMSTONE05  Accepted   KB5035845  104GB 2024-03 Cumulative Update for Windows 10 Version 22H2 for x64-based Syste...
+2 PREMSTONE05  Downloaded KB5034441   23MB 2024-01 Security Update for Windows 10 Version 22H2 for x64-based Systems...
+2 PREMSTONE05  Downloaded KB890830    65MB Windows Malicious Software Removal Tool x64 - v5.122 (KB890830)
+2 PREMSTONE05  Downloaded KB5001716  812KB 2024-03 Update for Windows 10 Version 22H2 for x64-based Systems (KB5001716)
+2 PREMSTONE05  Downloaded KB5035845  104GB 2024-03 Cumulative Update for Windows 10 Version 22H2 for x64-based Syste...
+3 PREMSTONE05  Failed     KB5034441   23MB 2024-01 Security Update for Windows 10 Version 22H2 for x64-based Systems...
+3 PREMSTONE05  Installed  KB890830    65MB Windows Malicious Software Removal Tool x64 - v5.122 (KB890830)
+3 PREMSTONE05  Installed  KB5001716  812KB 2024-03 Update for Windows 10 Version 22H2 for x64-based Systems (KB5001716)
+3 PREMSTONE05  Installed  KB5035845  104GB 2024-03 Cumulative Update for Windows 10 Version 22H2 for x64-based Syste...
+
+
+PS C:\Users\Owner> # Updating WinGet package manager

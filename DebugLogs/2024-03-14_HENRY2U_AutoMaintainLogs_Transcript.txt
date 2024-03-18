@@ -1,0 +1,424 @@
+**********************
+PowerShell transcript start
+Start time: 20240307120430
+Username: HENRY2U\Henry
+RunAs User: HENRY2U\Henry
+Configuration Name: 
+Machine: HENRY2U (Microsoft Windows NT 10.0.22635.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.dll
+Process ID: 2984
+PSVersion: 7.4.1
+PSEdition: Core
+GitCommitId: 7.4.1
+OS: Microsoft Windows 10.0.22635
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Owner> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Owner> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Wait;
+PS C:\Users\Owner> TerminatingError(Set-ExecutionPolicy): "A parameter cannot be found that matches parameter name 'Wait'."
+Set-ExecutionPolicy: A parameter cannot be found that matches parameter name 'Wait'.
+Set-ExecutionPolicy: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Enable System Restore for the C: drive.
+PS C:\Users\Owner> Enable-ComputerRestore -Drive "C:\" -Wait;
+Enable-ComputerRestore: A parameter cannot be found that matches parameter name 'Wait'.
+Enable-ComputerRestore: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Owner> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS" -Wait;
+Checkpoint-Computer: A parameter cannot be found that matches parameter name 'Wait'.
+Checkpoint-Computer: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Owner> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser -Wait;
+PS C:\Users\Owner> TerminatingError(Install-PackageProvider): "A parameter cannot be found that matches parameter name 'Wait'."
+Install-PackageProvider: A parameter cannot be found that matches parameter name 'Wait'.
+Install-PackageProvider: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Owner> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Wait;
+PS C:\Users\Owner> TerminatingError(Set-PSRepository): "A parameter cannot be found that matches parameter name 'Wait'."
+Set-PSRepository: A parameter cannot be found that matches parameter name 'Wait'.
+Set-PSRepository: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Owner> Install-Module PowerShellGet -Force -PassThru;
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+WARNING: The version '2.2.5' of module 'PowerShellGet' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Owner> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Owner> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser -PassThru;
+WARNING: The version '2.2.1.4' of module 'PSWindowsUpdate' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Owner> # Import the PSWindowsUpdate module.
+PS C:\Users\Owner> Import-Module PSWindowsUpdate -PassThru ;
+
+ModuleType Version    PreRelease Name                                ExportedCommands
+---------- -------    ---------- ----                                ----------------
+Binary     2.2.1.4               PSWindowsUpdate                     {Add-WUServiceManager, Enable-WURemoting, Get-Win…
+
+PS C:\Users\Owner> # Update all PowerShell modules
+PS C:\Users\Owner> Update-Module -Name * -PassThru -Wait;
+>> TerminatingError(Update-Module): "A parameter cannot be found that matches parameter name 'Wait'."
+Update-Module: A parameter cannot be found that matches parameter name 'Wait'.
+Update-Module: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Owner> Get-WindowsUpdate -Install -AcceptAll  -Wait;
+>> TerminatingError(Get-WindowsUpdate): "A parameter cannot be found that matches parameter name 'Wait'."
+Get-WindowsUpdate: A parameter cannot be found that matches parameter name 'Wait'.
+Get-WindowsUpdate: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install adobe.acrobat.reader.64-bit -PassThru -Wait;
+
+PS C:\Users\Owner> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install apple.itunes -PassThru -Wait;
+
+PS C:\Users\Owner> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install VideoLAN.VLC -PassThru -Wait;
+
+PS C:\Users\Owner> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install 7zip.7zip -PassThru -Wait;
+
+PS C:\Users\Owner> # Opening MS Store Downloads and Updates
+PS C:\Users\Owner> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\Owner> # Open storage sense # Start MS Windows Update
+PS C:\Users\Owner> Start-Process "ms-settings:storagesense" && Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\Owner> # Run cleanmgr command
+PS C:\Users\Owner> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -Wait -NoNewWindow -Verbose -PassThru -Wait;
+>> TerminatingError(Start-Process): "Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3"."
+Start-Process: Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+Start-Process: Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+PS C:\Users\Owner> # Optimize C: drive with ReTrim
+PS C:\Users\Owner> Optimize-Volume -DriveLetter C -ReTrim -Verbose -PassThru -Wait;
+PS C:\Users\Owner> TerminatingError(Optimize-Volume): "A parameter cannot be found that matches parameter name 'PassThru'."
+Optimize-Volume: A parameter cannot be found that matches parameter name 'PassThru'.
+Optimize-Volume: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Run SFC /scannow command
+PS C:\Users\Owner> SFC /scannow - Verbose -PassThru -Wait;
+
+PS C:\Users\Owner> # Updating WinGet package manager
+PS C:\Users\Owner> Winget upgrade --all --include-unknown -PassThru -Wait;
+
+PS C:\Users\Owner> # Stop transcript to end logging
+**********************
+PowerShell transcript start
+Start time: 20240307162942
+Username: HENRY2U\Henry
+RunAs User: HENRY2U\Henry
+Configuration Name: 
+Machine: HENRY2U (Microsoft Windows NT 10.0.22635.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.dll
+Process ID: 8972
+PSVersion: 7.4.1
+PSEdition: Core
+GitCommitId: 7.4.1
+OS: Microsoft Windows 10.0.22635
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Owner> # Start System Information
+PS C:\Users\Owner> Start-Process -FilePath "msinfo32"
+PS C:\Users\Owner> # Start MSP360 
+PS C:\Users\Owner> Start-Process C:\'Program Files'\'Nerds 2 You'\'Online Backup'\'Online Backup.exe'
+>> TerminatingError(Start-Process): "This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner'. The system cannot find the file specified."
+Start-Process: This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner'. The system cannot find the file specified.
+Start-Process: This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner'. The system cannot find the file specified.
+PS C:\Users\Owner> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Owner> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Owner> # Enable System Restore for the C: drive.
+PS C:\Users\Owner> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Owner> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Owner> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+PS C:\Users\Owner> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Owner> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+Install-PackageProvider: No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+Install-PackageProvider: No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+PS C:\Users\Owner> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Owner> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Owner> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Owner> Install-Module PowerShellGet -Force;
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+WARNING: The version '2.2.5' of module 'PowerShellGet' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Owner> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Owner> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+WARNING: The version '2.2.1.4' of module 'PSWindowsUpdate' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Owner> # Import the PSWindowsUpdate module.
+PS C:\Users\Owner> Import-Module PSWindowsUpdate;
+PS C:\Users\Owner> # Update all PowerShell modules
+PS C:\Users\Owner> Update-Module -Name *;
+PS C:\Users\Owner> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Owner> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\Owner> # Updating WinGet package manager
+PS C:\Users\Owner> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown" -Wait
+PS C:\Users\Owner> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install adobe.acrobat.reader.64-bit --accept-source-agreements;
+
+PS C:\Users\Owner> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install apple.itunes;
+
+PS C:\Users\Owner> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install VideoLAN.VLC;
+
+PS C:\Users\Owner> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install 7zip.7zip;
+
+PS C:\Users\Owner> # Opening MS Store Downloads and Updates
+PS C:\Users\Owner> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\Owner> # Open storage sense # Start MS Windows Update
+PS C:\Users\Owner> Start-Process "ms-settings:storagesense";
+PS C:\Users\Owner> Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\Owner> # Run cleanmgr command
+PS C:\Users\Owner> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -NoNewWindow -Verbose -PassThru -Wait;
+VERBOSE: Performing the operation "Start-Process" on target "C:\WINDOWS\system32\cleanmgr.exe /sagerun:1".
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+      2     0.41       2.13       0.03   18788   2 cleanmgr
+
+PS C:\Users\Owner> # Optimize C: drive with ReTrim
+PS C:\Users\Owner> Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  14% complete...
+VERBOSE: Retrim:  15% complete...
+VERBOSE: Retrim:  56% complete...
+VERBOSE: Retrim:  85% complete...
+VERBOSE: Retrim:  87% complete...
+VERBOSE: Retrim:  95% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 465.03 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 454.87 GB
+VERBOSE: 		Free space                  = 10.15 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 466
+VERBOSE: 		Allocations trimmed         = 3888
+VERBOSE: 		Total space trimmed         = 11.05 GB
+PS C:\Users\Owner> # Run SFC /scannow command
+PS C:\Users\Owner> SFC /scannow;
+
+PS C:\Users\Owner> # Stop transcript to end logging
+**********************
+PowerShell transcript start
+Start time: 20240314182826
+Username: HENRY2U\Henry
+RunAs User: HENRY2U\Henry
+Configuration Name: 
+Machine: HENRY2U (Microsoft Windows NT 10.0.22635.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.dll
+Process ID: 25248
+PSVersion: 7.4.1
+PSEdition: Core
+GitCommitId: 7.4.1
+OS: Microsoft Windows 10.0.22635
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\2024-03-14_HENRY2U_AutoMaintainLogs_Transcript.txt
+PS C:\> # Start System Information
+PS C:\> Start-Process -FilePath "msinfo32"
+PS C:\> # Start MSP360 
+PS C:\> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+>> TerminatingError(Start-Process): "This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\'. The system cannot find the file specified."
+Start-Process: This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\'. The system cannot find the file specified.
+Start-Process: This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\'. The system cannot find the file specified.
+PS C:\> # Set the execution policy to RemoteSigned for the current user.
+PS C:\> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+PS C:\> # Enable System Restore for the C: drive.
+PS C:\> Enable-ComputerRestore -Drive "C:\"
+PS C:\> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS"
+PS C:\> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+Install-PackageProvider: No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+Install-PackageProvider: No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+PS C:\> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+PS C:\> # Install the PowerShellGet module with the Force parameter.
+PS C:\> Install-Module PowerShellGet -Force
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+WARNING: The version '2.2.5' of module 'PowerShellGet' is currently in use. Retry the operation after closing the applications.
+PS C:\> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser
+WARNING: The version '2.2.1.4' of module 'PSWindowsUpdate' is currently in use. Retry the operation after closing the applications.
+PS C:\> # Import the PSWindowsUpdate module.
+PS C:\> Import-Module PSWindowsUpdate
+PS C:\> # Update all PowerShell modules
+PS C:\> Update-Module -Name *
+PS C:\> # Open MS Windows Update
+PS C:\> Start-Process 'ms-settings:windowsupdate'
+PS C:\> # Get and install all available Windows updates, accepting all prompts.
+PS C:\> Get-WindowsUpdate -Install -AcceptAll
+
+X ComputerName Result     KB          Size Title
+- ------------ ------     --          ---- -----
+1 HENRY2U      Accepted   KB5035955  128GB Cumulative Update for Windows 11 Insider Preview (10.0.22635.3350) (KB50359…
+2 HENRY2U      Downloaded KB5035955  128GB Cumulative Update for Windows 11 Insider Preview (10.0.22635.3350) (KB50359…
+3 HENRY2U      Installed  KB5035955  128GB Cumulative Update for Windows 11 Insider Preview (10.0.22635.3350) (KB50359…
+>> TerminatingError(Get-WindowsUpdate): "Object reference not set to an instance of an object."
+Get-WindowsUpdate: Object reference not set to an instance of an object.
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\> # Updating WinGet package manager
+PS C:\> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown --accept-source-agreements --accept-package-agreements"
+PS C:\> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\> winget install adobe.acrobat.reader.64-bit --accept-source-agreements
+
+PS C:\> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\> winget install apple.itunes
+
+PS C:\> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\> winget install VideoLAN.VLC
+
+PS C:\> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\> winget install 7zip.7zip
+
+PS C:\> # Opening MS Store Downloads and Updates
+PS C:\> Start-Process "ms-windows-store://downloadsandupdates"
+PS C:\> # Open storage sense 
+PS C:\> Start-Process "ms-settings:storagesense"
+PS C:\> # Run cleanmgr command
+PS C:\> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -Verbose -PassThru
+VERBOSE: Performing the operation "Start-Process" on target "C:\WINDOWS\system32\cleanmgr.exe /sagerun:1".
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+      0     0.06       0.01       0.05   20600   0 Idle
+
+PS C:\> # Optimize C: drive with ReTrim
+PS C:\> Optimize-Volume -DriveLetter C -ReTrim -Verbose
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  73% complete...
+VERBOSE: Retrim:  79% complete...
+VERBOSE: Retrim:  80% complete...
+VERBOSE: Retrim:  84% complete...
+VERBOSE: Retrim:  88% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 465.03 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 417.26 GB
+VERBOSE: 		Free space                  = 47.76 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 466
+VERBOSE: 		Allocations trimmed         = 2277
+VERBOSE: 		Total space trimmed         = 45.35 GB
+PS C:\> # Run SFC /scannow command
+PS C:\> SFC /scannow
+
+PS C:\> # Stop transcript to end logging
+PS C:\> Stop-Transcript
+**********************
+PowerShell transcript end
+End time: 20240314184225
+**********************
+**********************
+PowerShell transcript start
+Start time: 20240314191346
+Username: HENRY2U\Henry
+RunAs User: HENRY2U\Henry
+Configuration Name: 
+Machine: HENRY2U (Microsoft Windows NT 10.0.22635.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.dll
+Process ID: 12496
+PSVersion: 7.4.1
+PSEdition: Core
+GitCommitId: 7.4.1
+OS: Microsoft Windows 10.0.22635
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\2024-03-14_HENRY2U_AutoMaintainLogs_Transcript.txt
+PS>TerminatingError(Start-Process): "This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop'. The system cannot find the file specified."
+Start-Process: C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop\AutoMaintain.ps1:18
+Line |
+  18 |  Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Back …
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop'. The system cannot find the file specified.
+Start-Process: C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop\AutoMaintain.ps1:18
+Line |
+  18 |  Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Back …
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | This command cannot be run due to the error: An error occurred trying to start process 'C:\Program Files\Nerds 2
+     | You\Online Backup\Online Backup.exe' with working directory 'C:\Users\Owner\OneDrive - Nerds 2
+     | You\Pictures\Desktop'. The system cannot find the file specified.
+
+Install-PackageProvider: C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop\AutoMaintain.ps1:26
+Line |
+  26 |  Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+Install-PackageProvider: C:\Users\Owner\OneDrive - Nerds 2 You\Pictures\Desktop\AutoMaintain.ps1:26
+Line |
+  26 |  Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | No match was found for the specified search criteria for the provider 'NuGet'. The package provider requires
+     | 'PackageManagement' and 'Provider' tags. Please check if the specified package has the tags.
+
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+WARNING: The version '2.2.5' of module 'PowerShellGet' is currently in use. Retry the operation after closing the applications.
+No newer package versions are available from the configured sources.
+
+
+
+VERBOSE: Performing the operation "Start-Process" on target "C:\WINDOWS\system32\cleanmgr.exe /sagerun:1".
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+      2     0.41       2.13       0.00   18152   1 cleanmgr
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  16% complete...
+VERBOSE: Retrim:  19% complete...
+VERBOSE: Retrim:  22% complete...
+VERBOSE: Retrim:  24% complete...
+VERBOSE: Retrim:  64% complete...
+VERBOSE: Retrim:  76% complete...
+VERBOSE: Retrim:  79% complete...
+VERBOSE: Retrim:  80% complete...
+VERBOSE: Retrim:  84% complete...
+VERBOSE: Retrim:  88% complete...
+VERBOSE: Retrim:  97% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 465.03 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 418.10 GB
+VERBOSE: 		Free space                  = 46.92 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 466
+VERBOSE: 		Allocations trimmed         = 4501
+VERBOSE: 		Total space trimmed         = 46.88 GB
+
+Windows Resource Protection did not find any integrity violations.
+**********************
+PowerShell transcript end
+End time: 20240314192006
+**********************

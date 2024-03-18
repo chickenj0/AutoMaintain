@@ -1,0 +1,112 @@
+**********************
+PowerShell transcript start
+Start time: 20240307115433
+Username: HENRY2U\Henry
+RunAs User: HENRY2U\Henry
+Configuration Name: 
+Machine: HENRY2U (Microsoft Windows NT 10.0.22635.0)
+Host Application: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.4.1.0_x64__8wekyb3d8bbwe\pwsh.dll
+Process ID: 17908
+PSVersion: 7.4.1
+PSEdition: Core
+GitCommitId: 7.4.1
+OS: Microsoft Windows 10.0.22635
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Owner> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Owner> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -PassThru -Wait;
+>> TerminatingError(Set-ExecutionPolicy): "A parameter cannot be found that matches parameter name 'PassThru'."
+Set-ExecutionPolicy: A parameter cannot be found that matches parameter name 'PassThru'.
+Set-ExecutionPolicy: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Enable System Restore for the C: drive.
+PS C:\Users\Owner> Enable-ComputerRestore -Drive "C:\" -PassThru -Wait;
+Enable-ComputerRestore: A parameter cannot be found that matches parameter name 'PassThru'.
+Enable-ComputerRestore: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Owner> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS" -PassThru -Wait;
+Checkpoint-Computer: A parameter cannot be found that matches parameter name 'PassThru'.
+Checkpoint-Computer: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Owner> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser -PassThru -Wait;
+>> TerminatingError(Install-PackageProvider): "A parameter cannot be found that matches parameter name 'PassThru'."
+Install-PackageProvider: A parameter cannot be found that matches parameter name 'PassThru'.
+Install-PackageProvider: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Owner> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -PassThru -Wait;
+PS C:\Users\Owner> TerminatingError(Set-PSRepository): "A parameter cannot be found that matches parameter name 'PassThru'."
+Set-PSRepository: A parameter cannot be found that matches parameter name 'PassThru'.
+Set-PSRepository: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Owner> Install-Module PowerShellGet -Force -PassThru -Wait;
+>> TerminatingError(Install-Module): "A parameter cannot be found that matches parameter name 'Wait'."
+Install-Module: A parameter cannot be found that matches parameter name 'Wait'.
+Install-Module: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Owner> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser -PassThru -Wait;
+>> TerminatingError(Install-Module): "A parameter cannot be found that matches parameter name 'Wait'."
+Install-Module: A parameter cannot be found that matches parameter name 'Wait'.
+Install-Module: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Import the PSWindowsUpdate module.
+PS C:\Users\Owner> Import-Module PSWindowsUpdate -PassThru -Wait;
+>> TerminatingError(Import-Module): "A parameter cannot be found that matches parameter name 'Wait'."
+Import-Module: A parameter cannot be found that matches parameter name 'Wait'.
+Import-Module: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Update all PowerShell modules
+PS C:\Users\Owner> Update-Module -Name * -PassThru -Wait;
+>> TerminatingError(Update-Module): "A parameter cannot be found that matches parameter name 'Wait'."
+Update-Module: A parameter cannot be found that matches parameter name 'Wait'.
+Update-Module: A parameter cannot be found that matches parameter name 'Wait'.
+PS C:\Users\Owner> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Owner> Get-WindowsUpdate -Install -AcceptAll -PassThru -Wait;
+>> TerminatingError(Get-WindowsUpdate): "A parameter cannot be found that matches parameter name 'PassThru'."
+Get-WindowsUpdate: A parameter cannot be found that matches parameter name 'PassThru'.
+Get-WindowsUpdate: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install adobe.acrobat.reader.64-bit -PassThru -Wait;
+
+PS C:\Users\Owner> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install apple.itunes -PassThru -Wait;
+
+PS C:\Users\Owner> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install VideoLAN.VLC -PassThru -Wait;
+
+PS C:\Users\Owner> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install 7zip.7zip -PassThru -Wait;
+
+PS C:\Users\Owner> # Opening MS Store Downloads and Updates
+PS C:\Users\Owner> Start-Process "ms-windows-store://downloadsandupdates" -PassThru -Wait;
+>> TerminatingError(Start-Process): "This command cannot be run completely because the system cannot find all the information required."
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+PS C:\Users\Owner> # Open storage sense
+PS C:\Users\Owner> Start-Process "ms-settings:storagesense" -PassThru -Wait;
+>> TerminatingError(Start-Process): "This command cannot be run completely because the system cannot find all the information required."
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+PS C:\Users\Owner> # Run cleanmgr command
+PS C:\Users\Owner> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -Wait -NoNewWindow -Verbose -PassThru -Wait;
+>> TerminatingError(Start-Process): "Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3"."
+Start-Process: Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+Start-Process: Cannot bind parameter because parameter 'Wait' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+PS C:\Users\Owner> # Optimize C: drive with ReTrim
+PS C:\Users\Owner> Optimize-Volume -DriveLetter C -ReTrim -Verbose -PassThru -Wait;
+>> TerminatingError(Optimize-Volume): "A parameter cannot be found that matches parameter name 'PassThru'."
+Optimize-Volume: A parameter cannot be found that matches parameter name 'PassThru'.
+Optimize-Volume: A parameter cannot be found that matches parameter name 'PassThru'.
+PS C:\Users\Owner> # Run SFC /scannow command
+PS C:\Users\Owner> SFC /scannow - Verbose -PassThru -Wait;
+
+PS C:\Users\Owner> # Updating WinGet package manager
+PS C:\Users\Owner> Winget upgrade --all --include-unknown -PassThru -Wait;
+
+PS C:\Users\Owner> # Start MS Windows Update
+PS C:\Users\Owner> Start-Process 'ms-settings:windowsupdate' -PassThru -Wait;
+>> TerminatingError(Start-Process): "This command cannot be run completely because the system cannot find all the information required."
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+Start-Process: This command cannot be run completely because the system cannot find all the information required.
+PS C:\Users\Owner> # Stop transcript to end logging

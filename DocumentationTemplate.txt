@@ -16,7 +16,7 @@ Install 7-Zip using the Windows Package Manager (winget).
 Office and 365 -  installed updated checked
 MS Store Apps - installed updated checked
 Enabled storage sense
-Run cleanmgr command - cleaned
+Run cleanmgr
 Optimize C: drive with ReTrim - Allocations trimmed = 
 Run SFC /scannow – found corrupt files and successfully repaired
 Windows Update - 
@@ -29,6 +29,7 @@ Lenovo Vantage -  installed updated checked
 AMD Software Installer -  installed updated checked
 MyASUS -  installed updated checked
 HP PC Hardware Diagnostics - 
+HP Support Assistant - 
 ACER - 
 
 3rd party software 

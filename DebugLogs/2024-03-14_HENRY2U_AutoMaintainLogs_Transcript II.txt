@@ -1,0 +1,20 @@
+ Westside03
+ Hewlett-Packard - USB - 3/4/2019 12:00:00 AM - 48.2.4483.1963
+  2024-03 Cumulative Update for Windows 11 Version 23H2 KB5035853y
+  
+  Microsoft Teams (work or school)           Microsoft.Teams              23285.3607.2525.937 23320.3027.2591.1505 winget
+Dev Home                                   Microsoft.DevHome            0.1100.416.0        0.1101.416.0         winget
+Microsoft .NET Core Runtime - 3.1.28 (x64) Microsoft.DotNet.Runtime.3_1 3.1.28              3.1.32               winget
+Microsoft Visual C++ 2015-2022 Redistribu… Microsoft.VCRedist.2015+.x86 14.36.32532.0       14.38.33135.0        winget
+Microsoft Visual C++ 2015-2022 Redistribu… Microsoft.VCRedist.2015+.x64 14.36.32532.0       14.38.33135.0        winget
+Egnyte Desktop App                         Egnyte.EgnyteDesktopApp      3.15.4.137          3.16.2.140           winget
+Microsoft.WindowsAppRuntime.1.4
+
+office checked
+
+2422
+
+HP support assistant - checked
+
+Windows® 10 and Windows 11* Wi-Fi Drivers for Intel® Wireless Adapters, 
+Intel® Wireless Bluetooth® for Windows® 10 and Windows 11*

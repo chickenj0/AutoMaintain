@@ -1,0 +1,139 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240311144749
+Username: PRTEKREFRIG04\User
+RunAs User: PRTEKREFRIG04\User
+Configuration Name: 
+Machine: PRTEKREFRIG04 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 4408
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\User> # Start System Information
+PS C:\Users\User> Start-Process -FilePath "msinfo32"
+PS C:\Users\User> # Start MSP360 
+PS C:\Users\User> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+PS C:\Users\User> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\User> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\User> # Enable System Restore for the C: drive.
+PS C:\Users\User> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\User> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\User> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+PS C:\Users\User> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\User> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\User> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\User> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\User> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\User> Install-Module PowerShellGet -Force;
+PS C:\Users\User> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\User> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\User> # Import the PSWindowsUpdate module.
+PS C:\Users\User> Import-Module PSWindowsUpdate;
+PS C:\Users\User> # Update all PowerShell modules
+PS C:\Users\User> Update-Module -Name *;
+PS C:\Users\User> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\User> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\User> # Updating WinGet package manager
+PS C:\Users\User> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown" -Wait
+PS C:\Users\User> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\User> winget install adobe.acrobat.reader.64-bit --accept-source-agreements;
+
+PS C:\Users\User> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\User> winget install apple.itunes;
+
+PS C:\Users\User> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\User> winget install VideoLAN.VLC;
+
+PS C:\Users\User> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\User> winget install 7zip.7zip;
+
+PS C:\Users\User> # Opening MS Store Downloads and Updates
+PS C:\Users\User> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\User> # Open storage sense # Start MS Windows Update
+PS C:\Users\User> Start-Process "ms-settings:storagesense";
+PS C:\Users\User> Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\User> # Run cleanmgr command
+PS C:\Users\User> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -NoNewWindow -Verbose -PassThru -Wait;
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     16       2      440       2192       0.00  14816   1 cleanmgr
+
+
+PS C:\Users\User> # Optimize C: drive with ReTrim
+PS C:\Users\User> Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  12% complete...
+VERBOSE: Retrim:  13% complete...
+VERBOSE: Retrim:  16% complete...
+VERBOSE: Retrim:  19% complete...
+VERBOSE: Retrim:  22% complete...
+VERBOSE: Retrim:  26% complete...
+VERBOSE: Retrim:  29% complete...
+VERBOSE: Retrim:  32% complete...
+VERBOSE: Retrim:  35% complete...
+VERBOSE: Retrim:  38% complete...
+VERBOSE: Retrim:  42% complete...
+VERBOSE: Retrim:  45% complete...
+VERBOSE: Retrim:  47% complete...
+VERBOSE: Retrim:  49% complete...
+VERBOSE: Retrim:  52% complete...
+VERBOSE: Retrim:  54% complete...
+VERBOSE: Retrim:  57% complete...
+VERBOSE: Retrim:  61% complete...
+VERBOSE: Retrim:  63% complete...
+VERBOSE: Retrim:  65% complete...
+VERBOSE: Retrim:  67% complete...
+VERBOSE: Retrim:  70% complete...
+VERBOSE: Retrim:  73% complete...
+VERBOSE: Retrim:  75% complete...
+VERBOSE: Retrim:  78% complete...
+VERBOSE: Retrim:  81% complete...
+VERBOSE: Retrim:  83% complete...
+VERBOSE: Retrim:  85% complete...
+VERBOSE: Retrim:  87% complete...
+VERBOSE: Retrim:  89% complete...
+VERBOSE: Retrim:  92% complete...
+VERBOSE: Retrim:  95% complete...
+VERBOSE: Retrim:  97% complete...
+VERBOSE: Retrim:  99% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 930.73 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 101.44 GB
+VERBOSE: 		Free space                  = 829.29 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 931
+VERBOSE: 		Allocations trimmed         = 5050
+VERBOSE: 		Total space trimmed         = 832.98 GB
+PS C:\Users\User> # Run SFC /scannow command
+PS C:\Users\User> SFC /scannow;
+
+PS C:\Users\User> # Stop transcript to end logging
+PS C:\Users\User> Stop-Transcript;
+**********************
+Windows PowerShell transcript end
+End time: 20240311145646
+**********************

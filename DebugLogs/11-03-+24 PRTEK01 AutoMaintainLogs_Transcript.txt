@@ -1,0 +1,139 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240311141338
+Username: PRTEKREFRIG01\Owner
+RunAs User: PRTEKREFRIG01\Owner
+Configuration Name: 
+Machine: PRTEKREFRIG01 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 31432
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Owner> # Start System Information
+PS C:\Users\Owner> Start-Process -FilePath "msinfo32"
+PS C:\Users\Owner> # Start MSP360 
+PS C:\Users\Owner> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+PS C:\Users\Owner> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Owner> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Owner> # Enable System Restore for the C: drive.
+PS C:\Users\Owner> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Owner> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Owner> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+WARNING: A new system restore point cannot be created because one has already been created within the past 1440 minutes. The frequency of restore point creation can be changed by creating the DWORD value 'SystemRestorePointCreationFrequency' under the registry key 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore'. The value of this registry key indicates the necessary time interval (in minutes) between two restore point creation. The default value is 1440 minutes (24 hours).
+PS C:\Users\Owner> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Owner> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\Owner> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Owner> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Owner> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Owner> Install-Module PowerShellGet -Force;
+PS C:\Users\Owner> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Owner> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\Owner> # Import the PSWindowsUpdate module.
+PS C:\Users\Owner> Import-Module PSWindowsUpdate;
+PS C:\Users\Owner> # Update all PowerShell modules
+PS C:\Users\Owner> Update-Module -Name *;
+PS C:\Users\Owner> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Owner> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\Owner> # Updating WinGet package manager
+PS C:\Users\Owner> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown" -Wait
+PS C:\Users\Owner> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install adobe.acrobat.reader.64-bit --accept-source-agreements;
+
+PS C:\Users\Owner> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install apple.itunes;
+
+PS C:\Users\Owner> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install VideoLAN.VLC;
+
+PS C:\Users\Owner> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\Owner> winget install 7zip.7zip;
+
+PS C:\Users\Owner> # Opening MS Store Downloads and Updates
+PS C:\Users\Owner> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\Owner> # Open storage sense # Start MS Windows Update
+PS C:\Users\Owner> Start-Process "ms-settings:storagesense";
+PS C:\Users\Owner> Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\Owner> # Run cleanmgr command
+PS C:\Users\Owner> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -NoNewWindow -Verbose -PassThru -Wait;
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     44       4      500       2884       0.00   3708   2 cleanmgr
+
+
+PS C:\Users\Owner> # Optimize C: drive with ReTrim
+PS C:\Users\Owner> Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  32% complete...
+VERBOSE: Retrim:  33% complete...
+VERBOSE: Retrim:  35% complete...
+VERBOSE: Retrim:  38% complete...
+VERBOSE: Retrim:  40% complete...
+VERBOSE: Retrim:  42% complete...
+VERBOSE: Retrim:  45% complete...
+VERBOSE: Retrim:  47% complete...
+VERBOSE: Retrim:  49% complete...
+VERBOSE: Retrim:  51% complete...
+VERBOSE: Retrim:  53% complete...
+VERBOSE: Retrim:  55% complete...
+VERBOSE: Retrim:  58% complete...
+VERBOSE: Retrim:  60% complete...
+VERBOSE: Retrim:  61% complete...
+VERBOSE: Retrim:  64% complete...
+VERBOSE: Retrim:  66% complete...
+VERBOSE: Retrim:  67% complete...
+VERBOSE: Retrim:  69% complete...
+VERBOSE: Retrim:  71% complete...
+VERBOSE: Retrim:  73% complete...
+VERBOSE: Retrim:  75% complete...
+VERBOSE: Retrim:  77% complete...
+VERBOSE: Retrim:  80% complete...
+VERBOSE: Retrim:  82% complete...
+VERBOSE: Retrim:  84% complete...
+VERBOSE: Retrim:  86% complete...
+VERBOSE: Retrim:  88% complete...
+VERBOSE: Retrim:  91% complete...
+VERBOSE: Retrim:  94% complete...
+VERBOSE: Retrim:  95% complete...
+VERBOSE: Retrim:  97% complete...
+VERBOSE: Retrim:  99% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 930.80 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 270.61 GB
+VERBOSE: 		Free space                  = 660.18 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 931
+VERBOSE: 		Allocations trimmed         = 8972
+VERBOSE: 		Total space trimmed         = 662.01 GB
+PS C:\Users\Owner> # Run SFC /scannow command
+PS C:\Users\Owner> SFC /scannow;
+
+PS C:\Users\Owner> # Stop transcript to end logging
+PS C:\Users\Owner> Stop-Transcript;
+**********************
+Windows PowerShell transcript end
+End time: 20240311142917
+**********************

@@ -1,0 +1,58 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240312141002
+Username: MARGARETL01\Margaret
+RunAs User: MARGARETL01\Margaret
+Configuration Name: 
+Machine: MARGARETL01 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 2868
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Margaret> # Start System Information
+PS C:\Users\Margaret> Start-Process -FilePath "msinfo32"
+PS C:\Users\Margaret> # Start MSP360 
+PS C:\Users\Margaret> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+PS C:\Users\Margaret> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Margaret> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Margaret> # Enable System Restore for the C: drive.
+PS C:\Users\Margaret> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Margaret> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Margaret> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+PS C:\Users\Margaret> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Margaret> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\Margaret> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Margaret> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Margaret> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Margaret> Install-Module PowerShellGet -Force;
+PS C:\Users\Margaret> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Margaret> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\Margaret> # Import the PSWindowsUpdate module.
+PS C:\Users\Margaret> Import-Module PSWindowsUpdate;
+PS C:\Users\Margaret> # Update all PowerShell modules
+PS C:\Users\Margaret> Update-Module -Name *;
+PS C:\Users\Margaret> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Margaret> Get-WindowsUpdate -Install -AcceptAll;
+
+X ComputerName Result     KB          Size Title
+- ------------ ------     --          ---- -----
+1 MARGARETL01  Accepted               48KB Lenovo - Monitor - 6.14.21.0
+2 MARGARETL01  Downloaded             48KB Lenovo - Monitor - 6.14.21.0
+3 MARGARETL01  Installed              48KB Lenovo - Monitor - 6.14.21.0
+
+
+PS C:\Users\Margaret> # Updating WinGet package manager

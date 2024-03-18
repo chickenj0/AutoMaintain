@@ -1,0 +1,176 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240312144641
+Username: MARGARETL01\Margaret
+RunAs User: MARGARETL01\Margaret
+Configuration Name: 
+Machine: MARGARETL01 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 23792
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Margaret> # Start System Information
+PS C:\Users\Margaret> Start-Process -FilePath "msinfo32"
+PS C:\Users\Margaret> # Start MSP360 
+PS C:\Users\Margaret> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+PS C:\Users\Margaret> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Margaret> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Margaret> # Enable System Restore for the C: drive.
+PS C:\Users\Margaret> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Margaret> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Margaret> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+WARNING: A new system restore point cannot be created because one has already been created within the past 1440 minutes. The frequency of restore point creation can be changed by creating the DWORD value 'SystemRestorePointCreationFrequency' under the registry key 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore'. The value of this registry key indicates the necessary time interval (in minutes) between two restore point creation. The default value is 1440 minutes (24 hours).
+PS C:\Users\Margaret> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Margaret> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\Margaret> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Margaret> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Margaret> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Margaret> Install-Module PowerShellGet -Force;
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Margaret> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Margaret> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\Margaret> # Import the PSWindowsUpdate module.
+PS C:\Users\Margaret> Import-Module PSWindowsUpdate;
+PS C:\Users\Margaret> # Update all PowerShell modules
+PS C:\Users\Margaret> Update-Module -Name *;
+PS C:\Users\Margaret> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Margaret> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\Margaret> # Updating WinGet package manager
+PS C:\Users\Margaret> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown" -Wait
+PS C:\Users\Margaret> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+**********************
+Windows PowerShell transcript start
+Start time: 20240312150335
+Username: MARGARETL01\Margaret
+RunAs User: MARGARETL01\Margaret
+Configuration Name: 
+Machine: MARGARETL01 (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 12292
+PSVersion: 5.1.22621.2506
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.2506
+BuildVersion: 10.0.22621.2506
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\AutoMaintainLogs_Transcript.txt
+PS C:\Users\Margaret> # Start System Information
+PS C:\Users\Margaret> Start-Process -FilePath "msinfo32"
+PS C:\Users\Margaret> # Start MSP360 
+PS C:\Users\Margaret> Start-Process "C:\Program Files\Nerds 2 You\Online Backup\Online Backup.exe"
+PS C:\Users\Margaret> # Set the execution policy to RemoteSigned for the current user.
+PS C:\Users\Margaret> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned;
+PS C:\Users\Margaret> # Enable System Restore for the C: drive.
+PS C:\Users\Margaret> Enable-ComputerRestore -Drive "C:\";
+PS C:\Users\Margaret> # Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
+PS C:\Users\Margaret> Checkpoint-Computer -Description "MaintenanceRestorePoint" -RestorePointType "MODIFY_SETTINGS";
+WARNING: A new system restore point cannot be created because one has already been created within the past 1440 minutes. The frequency of restore point creation can be changed by creating the DWORD value 'SystemRestorePointCreationFrequency' under the registry key 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore'. The value of this registry key indicates the necessary time interval (in minutes) between two restore point creation. The default value is 1440 minutes (24 hours).
+PS C:\Users\Margaret> # Install the NuGet package provider with the Force parameter for the current user scope.
+PS C:\Users\Margaret> Install-PackageProvider -Name NuGet -Force -Scope CurrentUser;
+
+Name                           Version          Source           Summary
+----                           -------          ------           -------
+nuget                          2.8.5.208        https://onege... NuGet provider for the OneGet meta-package manager
+
+
+PS C:\Users\Margaret> # Set the installation policy for the PSGallery repository to 'Trusted.'
+PS C:\Users\Margaret> Set-PSRepository -Name PSGallery -InstallationPolicy Trusted;
+PS C:\Users\Margaret> # Install the PowerShellGet module with the Force parameter.
+PS C:\Users\Margaret> Install-Module PowerShellGet -Force;
+WARNING: The version '1.4.8.1' of module 'PackageManagement' is currently in use. Retry the operation after closing the applications.
+PS C:\Users\Margaret> # Install the PSWindowsUpdate module with the Force and AllowClobber parameters for the current user scope.
+PS C:\Users\Margaret> Install-Module PSWindowsUpdate -Force -AllowClobber -Scope CurrentUser;
+PS C:\Users\Margaret> # Import the PSWindowsUpdate module.
+PS C:\Users\Margaret> Import-Module PSWindowsUpdate;
+PS C:\Users\Margaret> # Update all PowerShell modules
+PS C:\Users\Margaret> Update-Module -Name *;
+PS C:\Users\Margaret> # Get and install all available Windows updates, accepting all prompts.
+PS C:\Users\Margaret> Get-WindowsUpdate -Install -AcceptAll;
+PS C:\Users\Margaret> # Updating WinGet package manager
+PS C:\Users\Margaret> Start-Process powershell -ArgumentList "winget upgrade --all --include-unknown" -Wait
+PS C:\Users\Margaret> # Install Adobe Acrobat Reader using the Windows Package Manager (winget).
+PS C:\Users\Margaret> winget install adobe.acrobat.reader.64-bit --accept-source-agreements;
+
+PS C:\Users\Margaret> # Install Apple iTunes using the Windows Package Manager (winget).
+PS C:\Users\Margaret> winget install apple.itunes;
+
+PS C:\Users\Margaret> # Install VLC Media Player using the Windows Package Manager (winget).
+PS C:\Users\Margaret> winget install VideoLAN.VLC;
+
+PS C:\Users\Margaret> # Install 7-Zip using the Windows Package Manager (winget).
+PS C:\Users\Margaret> winget install 7zip.7zip;
+
+PS C:\Users\Margaret> # Opening MS Store Downloads and Updates
+PS C:\Users\Margaret> Start-Process "ms-windows-store://downloadsandupdates";
+PS C:\Users\Margaret> # Open storage sense # Start MS Windows Update
+PS C:\Users\Margaret> Start-Process "ms-settings:storagesense";
+PS C:\Users\Margaret> Start-Process 'ms-settings:windowsupdate';
+PS C:\Users\Margaret> # Run cleanmgr command
+PS C:\Users\Margaret> Start-Process -FilePath "cleanmgr.exe" -ArgumentList "/sagerun:1" -NoNewWindow -Verbose -PassThru -Wait;
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+     16       2      448       1656       0.00  18132   1 cleanmgr
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+PS C:\Users\Margaret> # Optimize C: drive with ReTrim
+PS C:\Users\Margaret> Optimize-Volume -DriveLetter C -ReTrim -Verbose;
+VERBOSE: Invoking retrim on (C:)...
+VERBOSE: Retrim:  0% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: Performing pass 1:
+VERBOSE: Retrim:  38% complete...
+VERBOSE: Retrim:  45% complete...
+VERBOSE: Retrim:  51% complete...
+VERBOSE: Retrim:  58% complete...
+VERBOSE: Retrim:  63% complete...
+VERBOSE: Retrim:  69% complete...
+VERBOSE: Retrim:  77% complete...
+VERBOSE: Retrim:  83% complete...
+VERBOSE: Retrim:  89% complete...
+VERBOSE: Retrim:  94% complete...
+VERBOSE: Retrim:  100% complete.
+VERBOSE: 
+Post Defragmentation Report:
+VERBOSE: 
+	Volume Information:
+VERBOSE: 		Volume size                 = 475.81 GB
+VERBOSE: 		Cluster size                = 4 KB
+VERBOSE: 		Used space                  = 87.63 GB
+VERBOSE: 		Free space                  = 388.18 GB
+VERBOSE: 
+	Retrim:
+VERBOSE: 		Backed allocations          = 476
+VERBOSE: 		Allocations trimmed         = 2346
+VERBOSE: 		Total space trimmed         = 393.00 GB
+PS C:\Users\Margaret> # Run SFC /scannow command
+PS C:\Users\Margaret> SFC /scannow;
+Verification 100% complete.
+
+Windows Resource Protection found corrupt files and successfully repaired them.
+For online repairs, details are included in the CBS log file located at
+windir\Logs\CBS\CBS.log. For example C:\Windows\Logs\CBS\CBS.log. For offline
+repairs, details are included in the log file provided by the /OFFLOGFILE flag.
+PS C:\Users\Margaret> # Stop transcript to end logging
+PS C:\Users\Margaret> Stop-Transcript;
+**********************
+Windows PowerShell transcript end
+End time: 20240312151632
+**********************
