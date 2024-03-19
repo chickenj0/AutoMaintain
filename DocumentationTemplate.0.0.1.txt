@@ -1,3 +1,5 @@
+DocumentationTemplate
+
 MSP360 Backup -  USB backed up, check quick restore successful
 Set the execution policy to RemoteSigned for the current user.
 Enable System Restore for the C: drive.
@@ -17,7 +19,7 @@ Office and 365 -  installed updated checked
 MS Store Apps - installed updated checked
 Enabled storage sense
 Run cleanmgr
-Optimize C: drive with ReTrim - Allocations trimmed = 
+Optimize C: drive with ReTrim - Allocations trimmed
 Run SFC /scannow – found corrupt files and successfully repaired
 Windows Update - 
 Updated WinGet package manager - 
