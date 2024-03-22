@@ -1,6 +1,6 @@
 DocumentationTemplate
 
-MSP360 Backup -  USB backed up, check quick restore successful
+MSP360 Backup -  USB / cloud backup run
 Set the execution policy to RemoteSigned for the current user.
 Enable System Restore for the C: drive.
 Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
@@ -16,24 +16,22 @@ Install Apple iTunes using winget
 Install VLC Media Player using winget
 Install 7-Zip using winget
 
-Windows Update - 
+Windows Update -  KB2538243 Security Update for Microsoft Visual C++ 2008 Service Pack 1
 Updated WinGet package manager - 
 Enabled storage sense
-Run cleanmgr
-Optimize C: drive with ReTrim - Allocations trimmed
-Run SFC /scannow – found corrupt files and successfully repaired
 
-BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
+
+BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF, full scan run
 
 Office and 365 -  installed updated checked
 MS Store Apps - installed updated checked
-Intel Driver & Support Assistant -  
+Intel Driver & Support Assistant -  installed updated checked
 Lenovo Vantage -  installed updated checked
 AMD Software Installer -  installed updated checked
 MyASUS -  installed updated checked
-HP PC Hardware Diagnostics - 
-HP Support Assistant - 
-ACER - 
+HP PC Hardware Diagnostics - installed updated checked
+HP Support Assistant - installed updated checked
+ACER - installed updated checked
 
 Adobe Creative Cloud - installed updated checked
 Samsung Magician -  installed updated checked
@@ -43,5 +41,10 @@ Apple Software Update -  installed updated checked
 HP Support Assist -  installed updated checked
 Logitech -  installed updated checked
 DisplayLink Manager - installed updated checked
-Brother 
+Brother - installed updated checked
 EPSON Software Updater App -  installed updated checked
+
+Run cleanmgr
+Optimize C: drive with ReTrim - Allocations trimmed
+Run SFC /scannow – found corrupt files and successfully repaired
+MSP360 Backup -  USB / cloud backup checked, correct

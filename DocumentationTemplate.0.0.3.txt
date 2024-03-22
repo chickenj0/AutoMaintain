@@ -1,6 +1,6 @@
 DocumentationTemplate
 
-MSP360 Backup -  USB backed up, check quick restore successful
+MSP360 Backup -  USB backed up "Full Desktop Backup" run
 Set the execution policy to RemoteSigned for the current user.
 Enable System Restore for the C: drive.
 Create a restore point with the description "MaintenanceRestorePoint" for modifying settings.
@@ -11,29 +11,24 @@ Install the PSWindowsUpdate module with the Force and AllowClobber parameters fo
 Import the PSWindowsUpdate module.
 Update all PowerShell modules
 Get and install all available Windows updates, accepting all prompts.
-Install Adobe Acrobat Reader using the Windows Package Manager (winget).
-Install Apple iTunes using winget
-Install VLC Media Player using winget
-Install 7-Zip using winget
+Install Adobe Acrobat Reader, Apple iTunes, VLC Media Player, 7-Zip and Google Chrome using the Windows Package Manager (winget).
 
 Windows Update - 
 Updated WinGet package manager - 
 Enabled storage sense
-Run cleanmgr
-Optimize C: drive with ReTrim - Allocations trimmed
-Run SFC /scannow – found corrupt files and successfully repaired
+
 
 BitDefender Endpoint Security Tools - signatures updated, modules checked, EDR sensor ON, Device Control OFF
 
 Office and 365 -  installed updated checked
 MS Store Apps - installed updated checked
-Intel Driver & Support Assistant -  
-Lenovo Vantage -  installed updated checked
+Intel Driver & Support Assistant -  installed updated checked
+Lenovo Vantage -  Lenovo USB3.0 LAN Driver for Docks and Adapters - 11 (21H2 or Later), Lenovo Intelligent Thermal Solution Driver - 10 (1607 or Later)/11 (21H2 or Later)
 AMD Software Installer -  installed updated checked
 MyASUS -  installed updated checked
-HP PC Hardware Diagnostics - 
-HP Support Assistant - 
-ACER - 
+HP PC Hardware Diagnostics - installed updated checked
+HP Support Assistant - installed updated checked
+ACER - installed updated checked
 
 Adobe Creative Cloud - installed updated checked
 Samsung Magician -  installed updated checked
@@ -43,5 +38,9 @@ Apple Software Update -  installed updated checked
 HP Support Assist -  installed updated checked
 Logitech -  installed updated checked
 DisplayLink Manager - installed updated checked
-Brother 
+Brother - installed updated checked
 EPSON Software Updater App -  installed updated checked
+
+Run cleanmgr
+Optimize C: drive with ReTrim - Allocations trimmed
+Run SFC /scannow – found corrupt files and successfully repaired
